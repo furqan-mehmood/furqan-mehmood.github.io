@@ -117,17 +117,15 @@ async function loadSkills() {
             const categoryDiv = document.createElement('div');
             categoryDiv.classList.add('mb-8', 'bg-gray-800', 'rounded-2xl', 'overflow-hidden', 'shadow-lg', 'collapsible-section');
 
-            const contentIsHidden = false; // Always false to keep all sections open by default
-
             const layoutFunction = layoutMap[category.category] || layoutMap.default;
             const skillsHtml = layoutFunction(category.skills);
 
             categoryDiv.innerHTML = `
                 <button class="w-full text-left px-6 py-4 bg-gray-900 hover:bg-gray-700 flex justify-between items-center focus:outline-none">
                     <h3 class="text-xl font-semibold text-cyan-400">${category.category}</h3>
-                    <span class="accordion-arrow text-slate-300 text-xl">&#9662;</span>
+                    <span class="accordion-arrow text-slate-300 text-xl">&#9656;</span>
                 </button>
-                <div class="accordion-content px-6 py-4 text-slate-300 ${contentIsHidden ? 'hidden' : ''}">
+                <div class="accordion-content px-6 py-4 text-slate-300 hidden">
                     ${skillsHtml}
                 </div>
             `;
@@ -161,8 +159,6 @@ async function loadWorkExperience() {
             const expDiv = document.createElement('div');
             expDiv.classList.add('mb-4', 'bg-gray-800', 'rounded-2xl', 'overflow-hidden', 'shadow-lg');
 
-            const isFirst = index === 0;
-
             // Process the description to replace ** with <strong> tags
             const processedDescription = exp.description.map(d =>
                 d.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -182,9 +178,9 @@ async function loadWorkExperience() {
                             </div>
                         </span>
                     </span>
-                    <span class="accordion-arrow text-slate-300 text-xl">${isFirst ? '&#9662;' : '&#9656;'}</span>
+                    <span class="accordion-arrow text-slate-300 text-xl">&#9656;</span>
                 </button>
-                <div class="accordion-content px-6 py-4 text-slate-300 ${!isFirst ? 'hidden' : ''}">
+                <div class="accordion-content px-6 py-4 text-slate-300 hidden">
                     <ul class="mb-2 list-disc list-inside space-y-2">
                         ${processedDescription.map(d => `<li class="text-sm leading-relaxed">${d}</li>`).join('')}
                     </ul>
