@@ -3,115 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furqan Mehmood - IT Developer & Consultant</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Furqan Mehmood - Full Stack Developer & IT Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        a { transition: color 0.3s; }
-        a:hover { color: #1d4ed8; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+        }
+        h2::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #14b8a6;
+            margin-top: 5px;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-900 text-white p-4 sm:p-8">
 
-<!-- Header -->
-<header class="bg-white shadow">
-    <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Furqan Mehmood</h1>
-        <nav>
-            <a href="#about" class="px-3">About</a>
-            <a href="#experience" class="px-3">Experience</a>
-            <a href="#skills" class="px-3">Skills</a>
-            <a href="#contact" class="px-3">Contact</a>
-        </nav>
-    </div>
-</header>
+<!-- Main container -->
+<div class="bg-gray-800 p-8 rounded-3xl shadow-2xl max-w-6xl mx-auto">
 
-<!-- Hero Section -->
-<section class="max-w-4xl mx-auto px-4 py-20 text-center">
-    <h2 class="text-4xl font-bold mb-4">Full-Stack Developer & IT Consultant</h2>
-    <p class="text-gray-600 mb-6">
-        Bringing 10 years of experience in engineering digital solutions that optimize resource utility and enhance operational efficiency.
-    </p>
-    <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700">Contact Me</a>
-</section>
-
-<!-- About Section -->
-<section id="about" class="max-w-4xl mx-auto px-4 py-16">
-    <h3 class="text-2xl font-bold mb-4">About Me</h3>
-    <p>
-        I specialize in full-stack development, building Laravel APIs, responsive frontends with Vue.js and React, interactive mapping with Leaflet, and integrating third-party services for seamless digital experiences. Experienced in Agile, CI/CD, SaaS architecture, and international projects.
-    </p>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="bg-white py-16">
-    <div class="max-w-4xl mx-auto px-4">
-        <h3 class="text-2xl font-bold mb-8">Work Experience</h3>
-
-        <div class="mb-6">
-            <h4 class="text-xl font-semibold">Parkefficient GmbH – Düsseldorf, Germany</h4>
-            <p class="text-gray-600">Senior Full Stack Developer | 01/11/2022 – Current</p>
-            <ul class="list-disc list-inside mt-2 text-gray-700">
-                <li>Developed Laravel APIs for B2B parking and office management systems.</li>
-                <li>Created Filament PHP dashboards and responsive frontends with Vue.js.</li>
-                <li>Integrated Leaflet for interactive mapping and third-party APIs for real-time parking access.</li>
-            </ul>
+    <!-- Header -->
+    <header class="flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-8 pb-8 border-b border-gray-700 mb-8">
+        <div class="shrink-0">
+            <img class="profile-photo mx-auto sm:mx-0" src="https://placehold.co/150x150/1e293b/94a3b8?text=Your+Photo" alt="Furqan Mehmood's profile photo">
         </div>
-
-        <div class="mb-6">
-            <h4 class="text-xl font-semibold">Linear GmbH – Aachen, Germany</h4>
-            <p class="text-gray-600">Software Developer | 01/07/2020 – 28/10/2022</p>
-            <ul class="list-disc list-inside mt-2 text-gray-700">
-                <li>Developed React JS apps with Jira Service Management APIs for optimized client request handling.</li>
-                <li>Redeveloped BIM web app for floor heating cost estimation using MERN stack, Redis queues, and Node.js.</li>
-                <li>Responsible for architecture, development, and testing for client projects.</li>
-            </ul>
+        <div class="flex-1 text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-500 mb-2">
+                Furqan Mehmood
+            </h1>
+            <p class="text-xl sm:text-2xl text-slate-300 font-medium mb-4">
+                Senior Full Stack Developer & IT Consultant
+            </p>
+            <p class="text-md text-slate-400 leading-relaxed">
+                Bringing 10 years of full-stack development expertise in engineering digital solutions that optimize resource utility and enhance operational efficiency.
+            </p>
+            <div class="mt-6 flex justify-center sm:justify-start space-x-4">
+                <a href="https://www.linkedin.com/in/furqanmehmood" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">LinkedIn</a>
+                <a href="mailto:furqanmehmood@hotmail.com" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Email</a>
+                <a href="FurqanMehmoodCV.pdf" class="text-blue-400 hover:text-blue-300 transition-colors duration-200" download>Download CV</a>
+            </div>
         </div>
+    </header>
 
-        <div class="mb-6">
-            <h4 class="text-xl font-semibold">Exultec Concepts GmbH – Aachen, Germany</h4>
-            <p class="text-gray-600">Full-Stack Developer | 01/11/2017 – 30/06/2020</p>
-            <ul class="list-disc list-inside mt-2 text-gray-700">
-                <li>Developed REST APIs, mobile apps, and Angular frontends for business process management software.</li>
-                <li>Key modules: Shift Planning, Time Tracking, Billing Automation, Contract Management.</li>
-            </ul>
+    <!-- About Me -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-teal-400 mb-4">About Me</h2>
+        <p class="text-slate-300 leading-relaxed">
+            As a seasoned IT Consultant and Full-Stack Developer with a decade of experience, I specialize in architecting and delivering robust, scalable web applications for businesses. My expertise lies in transforming complex business challenges into efficient digital solutions. I am passionate about tackling a project from initial concept to final deployment, ensuring clean code, optimal performance, and seamless user experiences. I'm actively seeking new freelance and consulting opportunities.
+        </p>
+    </section>
+
+    <!-- What I Do -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-teal-400 mb-4">What I Do</h2>
+        <div class="grid md:grid-cols-2 gap-6 text-slate-300">
+            <div class="p-6 bg-gray-700 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400 mb-2">Full-Stack Development</h3>
+                <p class="text-sm">
+                    I design and build complete web applications, from robust backend APIs (Laravel, Node.js) to responsive and dynamic frontends (Vue.js, React.js).
+                </p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400 mb-2">IT Consulting & Architecture</h3>
+                <p class="text-sm">
+                    I provide expert guidance on system architecture, performance optimization (using tools like Redis), and integrating complex third-party services to meet your business needs.
+                </p>
+            </div>
         </div>
+    </section>
 
-        <!-- Add more experience blocks as needed -->
-    </div>
-</section>
+    <!-- Featured Projects -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-teal-400 mb-4">Featured Projects</h2>
+        <div class="space-y-6">
+            <!-- Project 1 -->
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400">Linear Flaechenheizung Schnellauslegung</h3>
+                <p class="text-sm text-slate-400 mb-2">Building Information Modeling (BIM) Tool</p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <li>**Challenge:** The existing system was slow and inefficient for complex floor heating calculations.</li>
+                    <li>**Solution:** I led the full redevelopment using the MERN stack, implementing a Redis queue for performance optimization, reducing calculation time significantly.</li>
+                    <li>**My Role:** Solely responsible for architectural design, development, and testing.</li>
+                    <li>**Technologies:** Node.js, Express.js, React.js, MongoDB, Redis.</li>
+                </ul>
+            </div>
+            <!-- Project 2 -->
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400">Linear Service Desk</h3>
+                <p class="text-sm text-slate-400 mb-2">Client Request Optimization App</p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <li>**Challenge:** Streamlining client requests and support workflows.</li>
+                    <li>**Solution:** Developed a React.js application integrated with Jira Service Management APIs, adding advanced filtering, search, and voting features.</li>
+                    <li>**My Role:** Full-stack development and API integration.</li>
+                    <li>**Technologies:** React.js, Jira APIs.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<!-- Skills Section -->
-<section id="skills" class="max-w-4xl mx-auto px-4 py-16">
-    <h3 class="text-2xl font-bold mb-4">Skills</h3>
-    <p class="mb-4 text-gray-600">Full-Stack Development, Web & Mobile, SaaS Architecture, Agile, API Development, CI/CD, Microservices</p>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-800">
-        <span class="bg-gray-200 px-3 py-1 rounded">Laravel</span>
-        <span class="bg-gray-200 px-3 py-1 rounded">Vue.js</span>
-        <span class="bg-gray-200 px-3 py-1 rounded">React.js</span>
-        <span class="bg-gray-200 px-3 py-1 rounded">Node.js</span>
-        <span class="bg-gray-200 px-3 py-1 rounded">PHP</span>
-        <span class="bg-gray-200 px-3 py-1 rounded">Angular</span>
-        <span class="bg-gray-200 px-3 py-1 rounded">Redis</span>
-        <span class="bg-gray-200 px-3 py-1 rounded">REST APIs</span>
-        <span class="bg-gray-200 px-3 py-1 rounded">CI/CD</span>
-    </div>
-</section>
+    <!-- Work History -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-teal-400 mb-4">Work History</h2>
+        <div class="space-y-6">
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400">Senior Full Stack Developer</h3>
+                <p class="text-sm text-slate-400 mb-2">Parkefficient GmbH – Düsseldorf, Germany | 2022 – Present</p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <li>Developed and architected scalable APIs with Laravel for B2B SaaS products.</li>
+                    <li>Built responsive frontends with Vue.js and integrated interactive Leaflet maps.</li>
+                    <li>Managed CI/CD pipelines and complex third-party API integrations (SAML).</li>
+                </ul>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400">Software Developer</h3>
+                <p class="text-sm text-slate-400 mb-2">Linear GmbH – Aachen, Germany | 2020 – 2022</p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <li>Led architectural design and development for multiple client projects.</li>
+                </ul>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400">Full-Stack Developer</h3>
+                <p class="text-sm text-slate-400 mb-2">Exultec Concepts GmbH – Aachen, Germany | 2017 – 2020</p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <li>Built APIs with LoopBack and developed Angular frontend modules for a company portal.</li>
+                </ul>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400">Software Engineer</h3>
+                <p class="text-sm text-slate-400 mb-2">Goodcore Software Pvt Ltd – Karachi, Pakistan | 2015 – 2016</p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <li>Developed and maintained web applications using PHP, Yii, and Laravel for clients.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact" class="bg-white py-16">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h3 class="text-2xl font-bold mb-4">Contact Me</h3>
-        <p class="mb-4">Email: <a href="mailto:furqanmehmood@hotmail.com" class="text-blue-600">furqanmehmood@hotmail.com</a></p>
-        <p class="mb-4">LinkedIn: <a href="https://www.linkedin.com/in/furqanmehmood" target="_blank" class="text-blue-600">linkedin.com/in/furqanmehmood</a></p>
-        <p class="mb-4">Phone: (+49) 17640498143</p>
-        <a href="FurqanMehmoodCV.pdf" class="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700" download>Download CV</a>
-    </div>
-</section>
+    <!-- Skills -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-teal-400 mb-4">Skills</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-6 bg-gray-700 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400 mb-2">Core Technologies</h3>
+                <div class="flex flex-wrap gap-2 text-sm text-slate-300">
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">PHP</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Laravel</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Node.js</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Express.js</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">JavaScript</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">TypeScript</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Vue.js</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">React.js</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Angular.js</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">HTML/CSS</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Tailwind CSS</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">MongoDB</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">MySQL</span>
+                </div>
+                <h3 class="text-xl font-semibold text-cyan-400 mt-4 mb-2">Tools & Practices</h3>
+                <div class="flex flex-wrap gap-2 text-sm text-slate-300">
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Redis</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Jira</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Agile/Scrum</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">TDD/Unit Testing</span>
+                    <span class="bg-gray-600 px-2 py-1 rounded-full">Git</span>
+                </div>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-2xl shadow-inner">
+                <h3 class="text-xl font-semibold text-cyan-400 mb-2">IT Consulting & Soft Skills</h3>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <li>Systems Architecture</li>
+                    <li>Performance Optimization</li>
+                    <li>Technical Communication</li>
+                    <li>Client Relationship Management</li>
+                    <li>Problem Solving</li>
+                    <li>Team Leadership & Mentoring</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-cyan-400 mt-4 mb-2">Languages</h3>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <li>**Urdu:** Mother Tongue</li>
+                    <li>**English:** Professional proficiency (C2/C1)</li>
+                    <li>**German:** Professional proficiency (C1/B2)</li>
+                    <li>**Turkish:** Elementary proficiency (A2/A1)</li>
+                    <li>**Arabic:** Elementary proficiency (A1)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<footer class="bg-gray-100 py-6 text-center text-gray-600">
-    © 2025 Furqan Mehmood. All rights reserved.
-</footer>
+    <!-- Education Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-teal-400 mb-4">Education</h2>
+        <div class="space-y-4">
+            <div class="bg-gray-700 p-6 rounded-2xl">
+                <h3 class="text-xl font-semibold text-cyan-400">MSc Media Informatics</h3>
+                <p class="text-sm text-slate-300">RWTH Aachen, Germany | 2016 - 2019</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-2xl">
+                <h3 class="text-xl font-semibold text-cyan-400">BS Computer Science</h3>
+                <p class="text-sm text-slate-300">National University of Computer & Emerging Sciences - FAST, Pakistan | 2011 - 2015</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Call to Action -->
+    <section class="text-center p-8 bg-gray-700 rounded-3xl shadow-inner mt-12">
+        <h2 class="text-2xl font-bold text-teal-400 mb-4">Ready to Build Your Next Project?</h2>
+        <p class="text-slate-300 mb-6 max-w-2xl mx-auto">
+            I'm available for new freelance and consulting opportunities. Let's discuss how my expertise can help your business thrive.
+        </p>
+        <a href="mailto:furqanmehmood@hotmail.com" class="inline-block bg-teal-500 hover:bg-teal-400 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">
+            Get In Touch
+        </a>
+    </section>
+</div>
 </body>
 </html>
