@@ -23,7 +23,7 @@
     "role": "Software Developer",
     "description": "Redesigned a Building Information Modeling (BIM) web application from Ruby to the MERN stack. I was solely responsible for the architecture, development, and testing of the new system, implementing Redis for intensive calculations, which resulted in significant performance improvements.",
     "tech": ["React.js", "Node.js", "Express.js", "MongoDB", "Redis", "BIM"],
-    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=PROJECT",
+    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Linear",
     "link": "https://www.ivt-flaechenheizung-schnellauslegung.de"
   },
   {
@@ -38,10 +38,28 @@
   {
     "id": "project5",
     "title": "Zweirat – Beratung & Training",
-    "role": "Full-Stack Developer",
+    "role": "Development & DevOps",
     "description": "Built a corporate WordPress website for a consulting and training company. The site features information on workshops, media training, and coaching, and includes a client reference section. The project focused on creating a clear, easy-to-navigate platform to showcase the company's services and expertise.",
     "tech": ["WordPress", "PHP", "HTML", "CSS", "JavaScript"],
-    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=PROJECT",
+    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Zweirat",
     "link": "https://zweirat.de"
+  },
+  {
+    "id": "project_mma",
+    "title": "Malaysian Medical Association Website",
+    "role": "Development",
+    "description": "The Malaysian Medical Association (MMA) serves as the largest representative body of doctors in Malaysia. Their official website provides a portal for membership registration, professional resources, publications, continuing medical education (CPD), ethical guidance, event information, and organizational announcements.",
+    "tech": ["Membership Portal", "Public Resources"],
+    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=MMA",
+    "link": "https://mma.org.my"
+  },
+  {
+    "id": "project_vitcomex",
+    "title": "Vitcomex – Remittance Management System",
+    "role": "Development",
+    "description": "Vitcomex, a remittance agent for CIMB Bank, implemented a comprehensive Remittance Management System. This platform supports branch and online transactions from initiation to payout, including recording, categorizing, analysis, detailed financial reporting and receipt generation, featuring robust reporting modules like Trial Balance, P&L, Ledger, Commission Reports, and more.",
+    "tech": ["PHP Yii", "MVC", "Financial Reporting"],
+    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Vitcomex",
+    "link": "https://www.goodcore.co.uk/cases/remittance-management-software/"
   }
 ]
