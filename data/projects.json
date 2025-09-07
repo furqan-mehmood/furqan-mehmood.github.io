@@ -1,0 +1,29 @@
+[
+  {
+    "id": "project1",
+    "title": "Parkefficient",
+    "role": "Senior Full-Stack Developer",
+    "description": "Developed a comprehensive, cloud-based platform for the digital management of parking spaces. The solution includes an intelligent app for employee parking (ParkEfficient) and a central control hub for property management (AssetOS). Implemented features such as digital access control (QR codes, license plate recognition), real-time data analysis, and automated billing. The platform is designed for seamless integration into existing infrastructure via APIs.",
+    "tech": ["Laravel", "Vue.js", "Filament", "REST API", "Leaflet", "SAML SSO"],
+    "image": "images/pe.png",
+    "link": "https://parkefficient.de"
+  },
+  {
+    "id": "project2",
+    "title": "OfficeEfficient",
+    "role": "Senior Full-Stack Developer",
+    "description": "Developed a desk-sharing software for booking workspaces, conference rooms, and parking spaces. The platform offers a central dashboard for data analysis on office usage and seamless integrations with Microsoft Office 365, Teams, and other calendar systems. The focus was on data security, scalability, and intuitive user experience.",
+    "tech": ["Laravel", "Vue.js", "Filament", "REST API", "Microsoft 365 APIs"],
+    "image": "images/oe.png",
+    "link": "https://officeefficient.de"
+  },
+  {
+    "id": "project3",
+    "title": "Linear Flächenheizung Schnellauslegung",
+    "role": "Software Developer",
+    "description": "Redesigned a Building Information Modeling (BIM) web application from Ruby to the MERN stack. I was solely responsible for the architecture, development, and testing of the new system, implementing Redis for intensive calculations, which resulted in significant performance improvements.",
+    "tech": ["React.js", "Node.js", "Express.js", "MongoDB", "Redis", "BIM"],
+    "image": "images/lfs.png",
+    "link": "https://www.ivt-flaechenheizung-schnellauslegung.de"
+  }
+]

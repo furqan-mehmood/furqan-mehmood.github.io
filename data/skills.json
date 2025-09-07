@@ -1,0 +1,353 @@
+[
+  {
+    "category": "Programming Languages",
+    "skills": [
+      {
+        "name": "C",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
+      },
+      {
+        "name": "C++",
+        "logo": "https://isocpp.org/assets/images/cpp_logo.png"
+      },
+      {
+        "name": "CSS",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+      },
+      {
+        "name": "HTML",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+      },
+      {
+        "name": "Java",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
+      },
+      {
+        "name": "JavaScript",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+      },
+      {
+        "name": "PHP",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
+      },
+      {
+        "name": "Ruby",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg"
+      },
+      {
+        "name": "SQL",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
+      },
+      {
+        "name": "TypeScript",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+      }
+    ]
+  },
+  {
+    "category": "Frameworks & Libraries",
+    "skills": [
+      {
+        "name": "Angular.js",
+        "logo": "https://angular.io/assets/images/logos/angular/angular.svg"
+      },
+      {
+        "name": "Bootstrap",
+        "logo": "https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg"
+      },
+      {
+        "name": "Express.js",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"
+      },
+      {
+        "name": "FilamentPHP",
+        "logo": "https://laramate.de/storage/assets/icons/filament-php-icon.png"
+      },
+      {
+        "name": "Ionic",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/24/Ionic-logo-landscape.svg"
+      },
+      {
+        "name": "Laravel",
+        "logo": "https://laravel.com/img/logomark.min.svg"
+      },
+      {
+        "name": "Loopback",
+        "logo": "https://loopback.io/images/global/loopback-mark-frame-white.svg"
+      },
+      {
+        "name": "MaterialUI",
+        "logo": "https://mui.com/static/logo.png"
+      },
+      {
+        "name": "Node.js",
+        "logo": "https://nodejs.org/static/images/logo.svg"
+      },
+      {
+        "name": "React.js",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+      },
+      {
+        "name": "Sinatra",
+        "logo": "https://sinatrarb.com/images/logo.png"
+      },
+      {
+        "name": "Tailwind CSS",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+      },
+      {
+        "name": "Vue.js",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+      },
+      {
+        "name": "Yii",
+        "logo": "https://www.yiiframework.com/image/logo.svg"
+      }
+    ]
+  },
+  {
+    "category": "Databases & Tools",
+    "skills": [
+      {
+        "name": "MariaDB",
+        "logo": "https://mariadb.org/wp-content/themes/twentynineteen-child/icons/logo_seal.svg"
+      },
+      {
+        "name": "MongoDB",
+        "logo": "https://webassets.mongodb.com/_com_assets/cms/mongodb-logo-rgb-j6w271g1xn.jpg"
+      },
+      {
+        "name": "MySQL",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg"
+      },
+      {
+        "name": "PostgresSQL",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+      },
+      {
+        "name": "Redis",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg"
+      },
+      {
+        "name": "SQLite",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg"
+      }
+    ]
+  },
+  {
+    "category": "DevOps & Project Management",
+    "skills": [
+      {
+        "name": "Git",
+        "logo": "https://git-scm.com/images/logo@2x.png"
+      },
+      {
+        "name": "GitHub",
+        "logo": "https://avatars.githubusercontent.com/u/9919?s=40&v=4"
+      },
+      {
+        "name": "GitLab",
+        "logo": "https://about.gitlab.com/images/brand/gitlab-logo-tanuki.svg"
+      },
+      {
+        "name": "Bitbucket",
+        "logo": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/44_Bitbucket_logo_logos-512.png"
+      },
+      {
+        "name": "Forge",
+        "logo": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*22jjpWH-NcXAaG0uU8P-fw.png"
+      },
+      {
+        "name": "Envoyer",
+        "logo": "https://authenticator.2stable.com/assets/img/2fa-services/Icons/envoyer.io.svg"
+      },
+      {
+        "name": "Heroku",
+        "logo": "https://www.heroku.com/wp-content/uploads/2025/03/Heroku-Logo-KO-RGB-300.webp"
+      },
+      {
+        "name": "Trello",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Trello-logo-blue.svg"
+      },
+      {
+        "name": "Jira",
+        "logo": "https://cdn.worldvectorlogo.com/logos/jira-1.svg"
+      }
+    ]
+  },
+  {
+    "category": "Software Architecture & Development Practices",
+    "skills": [
+      {
+        "name": "Agile",
+        "logo": ""
+      },
+      {
+        "name": "API-first development",
+        "logo": ""
+      },
+      {
+        "name": "Authentication (JWT, OAuth 2.0)",
+        "logo": ""
+      },
+      {
+        "name": "CI/CD",
+        "logo": ""
+      },
+      {
+        "name": "Eloquent ORM",
+        "logo": ""
+      },
+      {
+        "name": "Full-stack development",
+        "logo": ""
+      },
+      {
+        "name": "GDPR compliance",
+        "logo": ""
+      },
+      {
+        "name": "Internationalization (i18n)",
+        "logo": ""
+      },
+      {
+        "name": "Kanban",
+        "logo": ""
+      },
+      {
+        "name": "Microservices",
+        "logo": ""
+      },
+      {
+        "name": "MVC architecture",
+        "logo": ""
+      },
+      {
+        "name": "MVP",
+        "logo": ""
+      },
+      {
+        "name": "Performance optimization",
+        "logo": ""
+      },
+      {
+        "name": "Peer reviews",
+        "logo": ""
+      },
+      {
+        "name": "REST APIs",
+        "logo": ""
+      },
+      {
+        "name": "SaaS",
+        "logo": ""
+      },
+      {
+        "name": "Scrum",
+        "logo": ""
+      },
+      {
+        "name": "Server-side rendering",
+        "logo": ""
+      },
+      {
+        "name": "SOLID principles",
+        "logo": ""
+      },
+      {
+        "name": "TDD",
+        "logo": ""
+      },
+      {
+        "name": "Unit Testing",
+        "logo": ""
+      }
+    ]
+  },
+  {
+    "category": "Soft Skills & Communication",
+    "skills": [
+      {
+        "name": "Adaptability",
+        "logo": ""
+      },
+      {
+        "name": "Agile Methodologies",
+        "logo": ""
+      },
+      {
+        "name": "Client Relationship Management",
+        "logo": ""
+      },
+      {
+        "name": "Collaboration",
+        "logo": ""
+      },
+      {
+        "name": "Conflict Resolution",
+        "logo": ""
+      },
+      {
+        "name": "Constructive Feedback",
+        "logo": ""
+      },
+      {
+        "name": "Continuous Learning",
+        "logo": ""
+      },
+      {
+        "name": "Critical Thinking",
+        "logo": ""
+      },
+      {
+        "name": "Cross-functional Collaboration",
+        "logo": ""
+      },
+      {
+        "name": "Mentoring",
+        "logo": ""
+      },
+      {
+        "name": "Problem Solving",
+        "logo": ""
+      },
+      {
+        "name": "Remote Work",
+        "logo": ""
+      },
+      {
+        "name": "Team Leadership",
+        "logo": ""
+      },
+      {
+        "name": "Technical Communication",
+        "logo": ""
+      },
+      {
+        "name": "Time Management",
+        "logo": ""
+      }
+    ]
+  },
+  {
+    "category": "Languages",
+    "skills": [
+      {
+        "name": "English",
+        "logo": "https://flagsapi.com/GB/flat/64.png"
+      },
+      {
+        "name": "German",
+        "logo": "https://flagsapi.com/DE/flat/64.png"
+      },
+      {
+        "name": "Turkish",
+        "logo": "https://flagsapi.com/TR/flat/64.png"
+      },
+      {
+        "name": "Urdu",
+        "logo": "https://flagsapi.com/PK/flat/64.png"
+      }
+    ]
+  }
+]
