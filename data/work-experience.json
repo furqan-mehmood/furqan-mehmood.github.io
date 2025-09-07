@@ -81,23 +81,14 @@
     "dates": "Jun 2015 - Aug 2016",
     "logo": "https://cdn-addgm.nitrocdn.com/MJnTlHySegcmvxPTBPLfaINTSJyWuhDi/assets/images/optimized/rev-0526930/www.goodcore.co.uk/assets/img/favicon.ico",
     "description": [
-      "Developed and maintained various web applications using PHP frameworks including Laravel, Yii, and Yii2.",
-      "Provided **technical support for 10 months** on RelACS, a bespoke **relocation management system** for corporate clients.",
       "Contributed to a remittance management system for a CMIS Bank Malaysia agent, which provided seamless processing and administration of online and branch-originated transactions.",
-      "Resolved live system bugs and provided ongoing technical support for multiple client applications."
+      "Developed and maintained the official web app for the Malaysian Medical Association, serving as the largest representative body of doctors in Malaysia.",
+      "Provided technical support for key projects, including the **EZ-Scheduler 2.0** and **RelACS – Relocation Management System**."
     ],
     "projects": [
       {
-        "name": "EZ-Scheduler 2.0",
-        "url": "https://www.echovisionllc.com/overview.php"
-      },
-      {
         "name": "Malaysian Medical Association",
         "url": "https://mma.org.my"
-      },
-      {
-        "name": "RelACS",
-        "url": "https://www.goodcore.co.uk/cases/relocation-management-system/"
       },
       {
         "name": "Vitcomex",
