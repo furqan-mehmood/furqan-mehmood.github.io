@@ -12,7 +12,7 @@ document.querySelectorAll('.section-fade-in').forEach(section => observer.observ
 // Function to dynamically load projects using PURE TAILWIND classes
 async function loadProjects() {
     try {
-        const response = await fetch('data/projects.json'); // Correct path
+        const response = await fetch('data/projects.json');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const projects = await response.json();
         const portfolioGrid = document.getElementById('portfolio-grid');
@@ -62,7 +62,6 @@ async function loadProjects() {
             portfolioGrid.appendChild(card);
         });
 
-        // Event listener to show modal (listens for the trigger class)
         portfolioGrid.addEventListener('click', (e) => {
             const modalTrigger = e.target.closest('.js-modal-trigger');
             if (!modalTrigger) return;
@@ -100,7 +99,7 @@ async function loadProjects() {
     }
 }
 
-// Dynamically load skills with PURE TAILWIND classes
+// Dynamically load skills with refined text chip layout
 async function loadSkills() {
     try {
         const response = await fetch('data/skills.json');
@@ -110,22 +109,37 @@ async function loadSkills() {
         if(!skillsContainer) return;
 
         skillsData.forEach(category => {
-            const skillsHtml = category.skills.map(skill => `
-                <div class="flex flex-col items-center text-center w-20 p-2">
-                    ${skill.logo ? `<img src="${skill.logo}" alt="${skill.name}" class="h-10 w-10 object-contain mb-2 transition-transform hover:scale-110">` : `<div class="h-10 w-10 bg-slate-700 rounded-full flex items-center justify-center text-xs p-1 mb-2 font-mono border border-slate-600">${skill.name.substring(0, 3)}</div>`}
-                    <span class="text-slate-400 text-xs">${skill.name}</span>
-                </div>
-            `).join('');
-
             const categoryDiv = document.createElement('div');
             categoryDiv.className = 'mb-4 bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section';
+
+            const skillsHtml = category.skills.map(skill => {
+                // If a logo exists, render the icon grid item
+                if (skill.logo) {
+                    return `
+                        <div class="flex flex-col items-center text-center w-20 p-2">
+                            <img src="${skill.logo}" alt="${skill.name}" class="h-10 w-10 object-contain mb-2 transition-transform hover:scale-110">
+                            <span class="text-slate-400 text-xs">${skill.name}</span>
+                        </div>
+                    `;
+                }
+                // If NO logo exists, render a clean text chip
+                return `
+                    <span class="bg-slate-700 text-blue-200 text-sm font-medium py-1.5 px-3 rounded-full">${skill.name}</span>
+                `;
+            }).join('');
+
+            // Use a different container class for text chips to get better spacing
+            const contentContainerClass = category.skills.some(s => s.logo)
+                ? 'flex flex-wrap gap-4 justify-start'
+                : 'flex flex-wrap gap-3 justify-start';
+
             categoryDiv.innerHTML = `
                 <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
                     <h3 class="text-xl font-semibold text-emerald-300">${category.category}</h3>
                     <span class="accordion-arrow text-slate-500 text-2xl font-light transform transition-transform duration-300">&#43;</span>
                 </button>
-                <div class="accordion-content px-6 py-5 hidden">
-                    <div class="flex flex-wrap gap-4 justify-start">
+                <div class="accordion-content p-6 hidden">
+                    <div class="${contentContainerClass}">
                         ${skillsHtml}
                     </div>
                 </div>
@@ -133,7 +147,6 @@ async function loadSkills() {
             skillsContainer.appendChild(categoryDiv);
         });
 
-        // Accordion toggle logic
         document.querySelectorAll('#skills-container .collapsible-section button').forEach(btn => {
             btn.addEventListener('click', () => {
                 const content = btn.nextElementSibling;
@@ -148,7 +161,7 @@ async function loadSkills() {
     }
 }
 
-// Dynamically load work experience with PURE TAILWIND classes
+// Dynamically load work experience with TIMELINE BAR FIX
 async function loadWorkExperience() {
     try {
         const response = await fetch('data/work-experience.json');
@@ -163,8 +176,6 @@ async function loadWorkExperience() {
 
             const processedDescription = exp.description.map(d => d.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-200">$1</strong>'));
 
-            // BUG FIX: The timeline-line div is now part of the template literal string.
-            // This prevents it from being overwritten by subsequent .innerHTML assignments.
             expDiv.innerHTML = `
                 ${index < experiences.length - 1 ? '<div class="timeline-line"></div>' : ''}
                 <button class="w-full text-left pl-4 pr-1 py-1 flex items-start justify-between focus:outline-none relative z-10">
@@ -195,18 +206,12 @@ async function loadWorkExperience() {
             container.appendChild(expDiv);
         });
 
-        // Accordion toggle logic
         document.querySelectorAll('#work-experience-container button').forEach(btn => {
             btn.addEventListener('click', () => {
                 const content = btn.nextElementSibling;
                 const arrow = btn.querySelector('.accordion-arrow');
-                const isHidden = content.classList.toggle('hidden');
-
-                if (isHidden) {
-                    arrow.classList.remove('rotate-45');
-                } else {
-                    arrow.classList.add('rotate-45');
-                }
+                content.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-45');
             });
         });
     } catch (err) {
@@ -214,7 +219,6 @@ async function loadWorkExperience() {
     }
 }
 
-// Handle Formspree submission
 const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 
@@ -245,7 +249,6 @@ if (form) {
     });
 }
 
-// Initialize all content loading
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
     loadSkills();

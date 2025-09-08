@@ -26,7 +26,7 @@
     "outcome_highlight": "Led the re-architecture of a BIM application to the MERN stack, achieving major performance gains.",
     "description": "I led the backend re-architecture of this Building Information Modeling (BIM) web app, migrating it from Ruby to a modern MERN stack. I was solely responsible for the new backend architecture, Node.js/Express development, database design, and testing. A key achievement was implementing Redis for intensive calculations, which significantly improved performance. I collaborated with a teammate who developed the React.js frontend.",
     "tech": ["React.js", "Node.js", "Express.js", "MongoDB", "Redis", "BIM"],
-    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Linear",
+    "image": "images/linear.png",
     "link": "https://www.ivt-flaechenheizung-schnellauslegung.de"
   },
   {
@@ -42,21 +42,21 @@
   {
     "id": "project_vitcomex",
     "title": "Vitcomex – Remittance Management System",
-    "role": "Software Engineer",
-    "outcome_highlight": "Contributed to a financial reporting and transaction system for a major remittance agent.",
-    "description": "As a member of the software engineering team, I contributed to a comprehensive Remittance Management System for a CIMB Bank agent. My work involved developing and maintaining features for processing branch and online transactions, and for the detailed financial reporting modules.",
-    "tech": ["PHP Yii", "MVC", "Financial Reporting", "MySQL"],
-    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Vitcomex",
+    "role": "Data Analytics Specialist",
+    "outcome_highlight": "Translated complex remittance transaction data into actionable insights and visualizations for a national financial agent.",
+    "description": "I supported the comprehensive Remittance Management System by focusing on its complex financial reporting capabilities. My role was to provide technical support for data analytics, handling advanced SQL queries to extract transaction data and developing visualizations for key financial reports (like P&L, Balance Sheets, and Commission Reports).",
+    "tech": ["Data Analytics", "SQL Queries", "Information Visualization", "Financial Reporting", "PHP Yii"],
+    "image": "images/vitcomex.png",
     "link": "https://www.goodcore.co.uk/cases/remittance-management-software/"
   },
   {
-    "id": "project_mma",
-    "title": "Malaysian Medical Association Webapp",
+    "id": "project_inhouse",
+    "title": "RelACS – SIRVA",
     "role": "Software Engineer",
-    "outcome_highlight": "Developed and maintained the national portal for Malaysia's largest body of doctors.",
-    "description": "I was part of the team responsible for developing and maintaining the official website for the Malaysian Medical Association. My responsibilities included working on the membership registration portal, professional resources, and event information sections.",
-    "tech": ["Membership Portal", "Public Resources", "PHP"],
-    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=MMA",
-    "link": "https://mma.org.my"
+    "outcome_highlight": "Supported and extended a custom operations platform, automating manual relocation workflows for a global mobility company.",
+    "description": "I maintained and enhanced a bespoke .NET web application designed to digitize and centralize all client relocation operations, replacing the firm's reliance on manual Excel and Word processes. My responsibilities included both providing ongoing technical support to resolve operational issues and building several new features to expand the platform's ability to manage client data and track relocation statuses.",
+    "tech": [".NET", "JavaScript", "SQL Server", "Operations Management", "B2B Portal"],
+    "image": "images/relacs.png",
+    "link": "https://www.goodcore.co.uk/cases/custom-relocation-management-software/"
   }
 ]
