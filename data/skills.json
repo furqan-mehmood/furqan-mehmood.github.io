@@ -114,7 +114,7 @@
       },
       {
         "name": "MongoDB",
-        "logo": "https://webassets.mongodb.com/_com_assets/cms/mongodb-logo-rgb-j6w271g1xn.jpg"
+        "logo": "https://www.mongodb.com/assets/images/global/favicon.ico"
       },
       {
         "name": "MySQL",
@@ -126,7 +126,7 @@
       },
       {
         "name": "Redis",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg"
+        "logo": "https://redis.io//wp-content/themes/wpx/assets/images/favicons/favicon-32x32.png?v=1720078588"
       },
       {
         "name": "SQLite",
@@ -155,7 +155,7 @@
       },
       {
         "name": "Forge",
-        "logo": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*22jjpWH-NcXAaG0uU8P-fw.png"
+        "logo": "https://forge.laravel.com/legacy/favicon-16x16.png"
       },
       {
         "name": "Envoyer",

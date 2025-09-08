@@ -3,7 +3,8 @@
     "id": "project1",
     "title": "ParkEfficient",
     "role": "Senior Full-Stack Developer",
-    "description": "Developed a comprehensive, cloud-based platform for the digital management of parking spaces. The solution includes an intelligent app for employee parking (ParkEfficient) and a central control hub for property management (AssetOS). Implemented features such as digital access control (QR codes, license plate recognition), real-time data analysis, and automated billing. The platform is designed for seamless integration into existing infrastructure via APIs.",
+    "outcome_highlight": "Contributed to a B2B SaaS platform for intelligent parking and asset management.",
+    "description": "As part of the development team, I contributed to a comprehensive, cloud-based platform for the digital management of parking spaces. My work involved developing features for the employee parking app (ParkEfficient) and the property management hub (AssetOS), including digital access control, real-time data analysis, and automated billing systems.",
     "tech": ["Laravel", "Vue.js", "Filament", "REST API", "Leaflet", "SAML SSO"],
     "image": "images/pe.png",
     "link": "https://parkefficient.de"
@@ -12,7 +13,8 @@
     "id": "project2",
     "title": "OfficeEfficient",
     "role": "Senior Full-Stack Developer",
-    "description": "Developed a desk-sharing software for booking workspaces, conference rooms, and parking spaces. The platform offers a central dashboard for data analysis on office usage and seamless integrations with Microsoft Office 365, Teams, and other calendar systems. The focus was on data security, scalability, and intuitive user experience.",
+    "outcome_highlight": "Key developer for a desk-sharing solution with full Microsoft 365 integration.",
+    "description": "I was a key developer on the team that built this desk-sharing software for booking workspaces, conference rooms, and parking spaces. I was responsible for implementing features in the central dashboard for data analysis and engineering the seamless integrations with Microsoft Office 365, Teams, and other calendar systems.",
     "tech": ["Laravel", "Vue.js", "Filament", "REST API", "Microsoft 365 APIs"],
     "image": "images/oe.png",
     "link": "https://officeefficient.de"
@@ -21,45 +23,40 @@
     "id": "project3",
     "title": "Linear Flächenheizung Schnellauslegung",
     "role": "Software Developer",
-    "description": "Redesigned a Building Information Modeling (BIM) web application from Ruby to the MERN stack. I was solely responsible for the architecture, development, and testing of the new system, implementing Redis for intensive calculations, which resulted in significant performance improvements.",
+    "outcome_highlight": "Led the re-architecture of a BIM application to the MERN stack, achieving major performance gains.",
+    "description": "I led the backend re-architecture of this Building Information Modeling (BIM) web app, migrating it from Ruby to a modern MERN stack. I was solely responsible for the new backend architecture, Node.js/Express development, database design, and testing. A key achievement was implementing Redis for intensive calculations, which significantly improved performance. I collaborated with a teammate who developed the React.js frontend.",
     "tech": ["React.js", "Node.js", "Express.js", "MongoDB", "Redis", "BIM"],
     "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Linear",
     "link": "https://www.ivt-flaechenheizung-schnellauslegung.de"
   },
   {
     "id": "project4",
-    "title": "Exultec.net",
+    "title": "Exultec.net BPM Software",
     "role": "Full-Stack Developer",
-    "description": "Developed a custom business process management software for shift planning, capacity pooling, and automated contract management. Engineered Angular frontend modules and used LoopBack for REST APIs. I also built an invoice claim mobile application using Ionic.",
+    "outcome_highlight": "Engineered core modules for a custom business process management tool.",
+    "description": "As a full-stack developer on the team, I engineered key frontend modules in Angular and developed REST APIs using LoopBack for a custom business process management software. My contributions were central to the shift planning, capacity pooling, and automated contract management features. I also built a related invoice claim mobile application using Ionic.",
     "tech": ["Angular", "LoopBack", "Ionic", "REST API"],
     "image": "images/exultec.png",
     "link": "https://exultec.net/"
   },
   {
-    "id": "project5",
-    "title": "Zweirat – Beratung & Training",
-    "role": "Development & DevOps",
-    "description": "Built a corporate WordPress website for a consulting and training company. The site features information on workshops, media training, and coaching, and includes a client reference section. The project focused on creating a clear, easy-to-navigate platform to showcase the company's services and expertise.",
-    "tech": ["WordPress", "PHP", "HTML", "CSS", "JavaScript"],
-    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Zweirat",
-    "link": "https://zweirat.de"
+    "id": "project_vitcomex",
+    "title": "Vitcomex – Remittance Management System",
+    "role": "Software Engineer",
+    "outcome_highlight": "Contributed to a financial reporting and transaction system for a major remittance agent.",
+    "description": "As a member of the software engineering team, I contributed to a comprehensive Remittance Management System for a CIMB Bank agent. My work involved developing and maintaining features for processing branch and online transactions, and for the detailed financial reporting modules.",
+    "tech": ["PHP Yii", "MVC", "Financial Reporting", "MySQL"],
+    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Vitcomex",
+    "link": "https://www.goodcore.co.uk/cases/remittance-management-software/"
   },
   {
     "id": "project_mma",
-    "title": "Malaysian Medical Association Website",
-    "role": "Development",
-    "description": "The Malaysian Medical Association (MMA) serves as the largest representative body of doctors in Malaysia. Their official website provides a portal for membership registration, professional resources, publications, continuing medical education (CPD), ethical guidance, event information, and organizational announcements.",
-    "tech": ["Membership Portal", "Public Resources"],
+    "title": "Malaysian Medical Association Webapp",
+    "role": "Software Engineer",
+    "outcome_highlight": "Developed and maintained the national portal for Malaysia's largest body of doctors.",
+    "description": "I was part of the team responsible for developing and maintaining the official website for the Malaysian Medical Association. My responsibilities included working on the membership registration portal, professional resources, and event information sections.",
+    "tech": ["Membership Portal", "Public Resources", "PHP"],
     "image": "https://dummyimage.com/300x200/374151/22d3ee&text=MMA",
     "link": "https://mma.org.my"
-  },
-  {
-    "id": "project_vitcomex",
-    "title": "Vitcomex – Remittance Management System",
-    "role": "Development",
-    "description": "Vitcomex, a remittance agent for CIMB Bank, implemented a comprehensive Remittance Management System. This platform supports branch and online transactions from initiation to payout, including recording, categorizing, analysis, detailed financial reporting and receipt generation, featuring robust reporting modules like Trial Balance, P&L, Ledger, Commission Reports, and more.",
-    "tech": ["PHP Yii", "MVC", "Financial Reporting"],
-    "image": "https://dummyimage.com/300x200/374151/22d3ee&text=Vitcomex",
-    "link": "https://www.goodcore.co.uk/cases/remittance-management-software/"
   }
 ]

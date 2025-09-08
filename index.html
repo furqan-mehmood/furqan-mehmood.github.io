@@ -3,173 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furqan Mehmood — Full-Stack & AI Solutions for Startups & SMEs</title>
-    <meta name="description" content="I am a full-stack developer and IT consultant with 10+ years of experience in Germany and the DACH region. I specialize in scalable web apps, booking systems, and AI-powered solutions to help businesses with digital transformation and automation.">
+    <title>Furqan Mehmood — Senior Full-Stack Engineer</title>
+    <meta name="description" content="A digital portfolio and CV for Furqan Mehmood, a senior full-stack engineer with 10+ years of experience specializing in scalable web & mobile applications, resource optimization, and AI-powered solutions.">
     <meta name="author" content="Furqan Mehmood">
     <link rel="icon" href="images/profile.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-        :root {
-            --bg: #0d1117;
-            --card-bg: #1f2937;
-            --brand-main: #38a3a5;
-            --brand-secondary: #57d9e4;
-            --text-primary: #e8ebff;
-            --text-secondary: #8b949e;
+        @layer base {
+            body {
+                @apply bg-slate-900 text-slate-100 font-['Inter'];
+            }
+            .timeline-item::before {
+                @apply content-[''] absolute left-[-14px] top-3 h-2 w-2 rounded-full bg-blue-400;
+            }
+            .timeline-line {
+                @apply absolute left-[-11px] top-[18px] bottom-0 w-0.5 bg-slate-500;
+            }
         }
-
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-primary); }
-
-        .glow-text {
-            text-shadow: 0 0 8px rgba(0, 255, 255, 0.4), 0 0 16px rgba(0, 255, 255, 0.2);
-            transition: text-shadow 0.3s ease;
-        }
-
         .section-fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
         .section-visible { opacity: 1; transform: translateY(0); }
-        .profile-photo { border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 4px solid var(--brand-main); }
-        .tech-tag { background-color: #14b8a6; color: #000; padding: 0.2rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; }
-
-        .timeline-item::before { content: ''; position: absolute; left: -14px; top: 12px; height: 8px; width: 8px; border-radius: 50%; background-color: var(--brand-main); }
-        .timeline-line { position: absolute; left: -11px; top: 18px; bottom: 0; width: 2px; background-color: #30363d; }
     </style>
 </head>
+<body class="bg-slate-900 text-slate-100">
 
-<body class="bg-gray-950">
-
-<nav class="sticky top-0 z-50 bg-gray-950 bg-opacity-80 backdrop-blur-md p-4 transition-all duration-300">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="#" class="text-xl font-bold text-brand-secondary">Furqan Mehmood</a>
-        <div class="flex space-x-4 items-center">
-            <a href="#portfolio" class="text-white hover:text-brand-main transition-colors">Portfolio</a>
-            <a href="#services" class="text-white hover:text-brand-main transition-colors hidden sm:inline-block">Services</a>
-            <a href="#experience" class="text-white hover:text-brand-main transition-colors hidden md:inline-block">Experience</a>
-            <a href="#contact" class="bg-brand-main hover:bg-brand-secondary text-black font-bold py-2 px-6 rounded-full transition-colors transform hover:scale-105">Hire Me</a>
+<header aria-label="Primary Navigation" class="sticky top-0 z-50 backdrop-saturate-[140%] backdrop-blur-md bg-slate-900/70 border-b border-slate-700">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
+        <a href="#" class="flex gap-2.5 items-center font-bold text-lg tracking-wide">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-b from-blue-400 to-emerald-300 shadow-lg shadow-blue-500/30" aria-hidden="true"></div>
+            Furqan Mehmood
+        </a>
+        <div class="hidden sm:flex items-center space-x-2 text-sm">
+            <a href="#portfolio" class="text-slate-100 hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">Portfolio</a>
+            <a href="#expertise" class="text-slate-100 hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">My Expertise</a>
+            <a href="#experience" class="text-slate-100 hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">Experience</a>
+            <a href="#skills" class="text-slate-100 hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">Skills</a>
+            <a href="#contact" class="bg-gradient-to-r from-blue-400 to-emerald-300 text-slate-950 font-bold py-2 px-5 rounded-lg transition-transform hover:scale-105">Contact</a>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
 
 <main class="max-w-6xl mx-auto p-6 sm:p-12">
 
-    <section id="hero" class="flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-8 mb-16 section-fade-in">
-        <div class="shrink-0">
-            <img class="profile-photo mx-auto sm:mx-0" src="images/profile.png" alt="Furqan Mehmood">
-        </div>
-        <div class="flex-1 text-center sm:text-left">
-            <h1 class="text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-brand-main to-brand-secondary mb-2">Furqan Mehmood</h1>
-            <p class="text-xl sm:text-2xl text-slate-300 font-medium mb-4">Senior Software Engineer (Full-Stack) | IT Consultant</p>
-            <p class="text-slate-300 leading-relaxed max-w-4xl">
-                I architect and develop scalable web applications that solve complex problems, from resource optimization to digital transformation, using the latest technologies, including AI. With over a decade of experience as an IT Consultant and Full-Stack Developer, my focus is on helping organizations unlock efficiency, streamline operations, and transform resources into measurable business value.
+    <section id="hero" class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center mb-24 section-fade-in">
+        <div class="md:col-span-3">
+                <span class="inline-flex gap-2 items-center bg-blue-900/50 border border-blue-800 text-blue-200 text-sm font-medium px-3 py-1 rounded-full mb-4">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l9 6-9 6-9-6 9-6zm0 8.485l9-6V17l-9 6-9-6V5.485l9 6z" stroke="currentColor" stroke-width="1.2"></path></svg>
+                    Senior Full-Stack Engineer
+                </span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+                Engineering <span class="bg-gradient-to-r from-blue-400 to-emerald-300 bg-clip-text text-transparent">High-Performance</span> Solutions for <span class="bg-gradient-to-r from-blue-400 to-emerald-300 bg-clip-text text-transparent">Complex Business Challenges</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-3xl">
+                I engineer robust digital solutions designed to solve complex business problems by optimizing systems for enhanced utility and performance. I am now actively exploring AI to unlock new opportunities for automation and to drive business growth.
             </p>
-            <div class="flex flex-wrap justify-center sm:justify-start gap-4 mt-6">
-                <a href="mailto:furqanmehmood@hotmail.com" class="bg-brand-main hover:bg-brand-secondary py-2 px-6 rounded-full font-bold transition-transform transform hover:scale-105 shadow-lg text-black">Email Me</a>
-                <a href="https://www.linkedin.com/in/furqanmehmood" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-6 rounded-full font-semibold transition-colors border border-gray-700">LinkedIn</a>
-                <a href="cv.pdf" download class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-6 rounded-full font-semibold transition-colors border border-gray-700">Download CV</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="mb-12 section-fade-in p-6 bg-card-bg rounded-3xl shadow-lg">
-        <h2 class="text-2xl font-bold text-brand-main glow-text mb-4">My Services</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-300">
-            <div class="p-6 bg-gray-800 rounded-3xl shadow-lg hover:shadow-cyan-500/20 transition-shadow">
-                <h3 class="text-xl font-semibold text-brand-secondary mb-2">Full-Stack Development (Web & Mobile)</h3>
-                <p class="text-sm text-text-secondary">I build high-performance web and mobile applications designed to scale. From intuitive user interfaces to powerful backend systems, my solutions handle complex workloads and large datasets with ease. The result: seamless cross-platform experiences that delight users and deliver measurable business outcomes.</p>
-            </div>
-            <div class="p-6 bg-gray-800 rounded-3xl shadow-lg hover:shadow-cyan-500/20 transition-shadow">
-                <h3 class="text-xl font-semibold text-brand-secondary mb-2">Digital Resource Optimization</h3>
-                <p class="text-sm text-text-secondary">I create intelligent booking and resource management systems that turn underutilized assets into new revenue opportunities. By enabling real-time allocation of spaces and resources—whether offices, parking lots, or equipment—I help businesses maximize utilization, reduce waste, and improve operational efficiency.</p>
-            </div>
-            <div class="p-6 bg-gray-800 rounded-3xl shadow-lg hover:shadow-cyan-500/20 transition-shadow">
-                <h3 class="text-xl font-semibold text-brand-secondary mb-2">AI & Automation Solutions</h3>
-                <p class="text-sm text-text-secondary">I integrate advanced AI models into tailored applications that automate workflows, enhance decision-making, and elevate customer experiences. My solutions include intelligent chatbots, predictive analytics, and automated content generation, empowering businesses to operate smarter, faster, and with greater impact.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="mb-12 section-fade-in p-6 bg-card-bg rounded-3xl shadow-lg">
-        <h2 class="text-2xl font-bold text-brand-main glow-text mb-4">Portfolio</h2>
-        <p class="text-slate-300 mb-6">Selected projects from my experience with over a decade of building custom web and mobile solutions.</p>
-        <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </section>
-
-    <section id="experience" class="mb-12 section-fade-in p-6 bg-card-bg rounded-3xl shadow-lg">
-        <h2 class="text-2xl font-bold text-brand-main glow-text mb-4">Work Experience</h2>
-        <div id="work-experience-container" class="relative pl-8"></div>
-    </section>
-
-    <section id="education" class="mb-12 section-fade-in p-6 bg-card-bg rounded-3xl shadow-lg">
-        <h2 class="text-2xl font-bold text-brand-main glow-text mb-4">Education</h2>
-        <div class="space-y-4">
-            <div class="p-4 bg-gray-800 rounded-2xl shadow-lg hover:shadow-cyan-500/20 transition-shadow">
-                <p class="flex items-center text-text-primary text-sm">
-                    <img src="https://flagsapi.com/DE/flat/64.png" alt="Germany Flag" class="h-4 w-6 object-contain mr-2">
-                    MSc Media Informatics from <strong>RWTH Aachen University</strong>
+            <div class="mt-6 border-l-4 border-slate-700 pl-4 text-slate-400 space-y-2">
+                <h3 class="font-semibold text-slate-300 text-sm tracking-wide uppercase">Key Qualifications</h3>
+                <p class="text-sm flex items-center">
+                    <img src="https://flagsapi.com/DE/flat/64.png" alt="Germany Flag" class="h-5 w-6 mr-2">
+                    MSc Media Informatics — <strong>RWTH Aachen University</strong>
+                </p>
+                <p class="text-sm flex items-center">
+                    <img src="https://flagsapi.com/PK/flat/64.png" alt="Pakistan Flag" class="h-5 w-6 mr-2">
+                    BS Computer Science — <strong>FAST-NUCES Karachi</strong>
                 </p>
             </div>
-            <div class="p-4 bg-gray-800 rounded-2xl shadow-lg hover:shadow-cyan-500/20 transition-shadow">
-                <p class="flex items-center text-text-primary text-sm">
-                    <img src="https://flagsapi.com/PK/flat/64.png" alt="Pakistan Flag" class="h-4 w-6 object-contain mr-2">
-                    BS Computer Science from <strong>FAST-NUCES Karachi</strong>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="#portfolio" class="bg-gradient-to-r from-blue-500 to-emerald-400 text-slate-950 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 shadow-lg">
+                    View My Work
+                </a>
+                <a href="cv.pdf" download class="bg-slate-800 border border-slate-700 text-white font-medium py-3 px-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    Download CV
+                </a>
+            </div>
+        </div>
+        <div class="md:col-span-2">
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-2xl shadow-xl p-6">
+                <img class="w-full h-auto rounded-lg border border-slate-700" src="images/profile.png" alt="Furqan Mehmood Profile Photo" />
+                <p class="text-sm text-slate-400 mt-4">
+                    Based in Germany with 10+ years of experience in the DACH tech sector, targeting global remote opportunities. Fluent in German & English.
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="mb-12 section-fade-in p-6 bg-card-bg rounded-3xl shadow-lg">
-        <h2 class="text-2xl font-bold text-brand-main glow-text mb-4">Skills</h2>
-        <div id="skills-container"></div>
+    <section id="expertise" class="mb-16 section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
+        <h2 class="text-3xl font-bold text-emerald-300 mb-6">My Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 bg-slate-900 rounded-xl shadow-lg border border-slate-700 transition-transform hover:scale-[1.03]">
+                <h3 class="text-xl font-semibold text-slate-100 mb-2">Full-Stack Development (SaaS)</h3>
+                <p class="text-sm text-slate-400">I build high-performance web applications that scale, including intelligent booking and resource management systems that turn assets into new revenue opportunities.</p>
+            </div>
+            <div class="p-6 bg-slate-900 rounded-xl shadow-lg border border-slate-700 transition-transform hover:scale-[1.03]">
+                <h3 class="text-xl font-semibold text-slate-100 mb-2">MVP & Prototype Development</h3>
+                <p class="text-sm text-slate-400">I help individuals and businesses validate ideas quickly by building Minimum Viable Products (MVPs) and functional prototypes, ready for market testing and user feedback.</p>
+            </div>
+            <div class="p-6 bg-slate-900 rounded-xl shadow-lg border border-slate-700 transition-transform hover:scale-[1.03]">
+                <h3 class="text-xl font-semibold text-slate-100 mb-2">AI & Automation Solutions</h3>
+                <p class="text-sm text-slate-400">Integrating advanced AI models to automate workflows, enhance decision-making, and create intelligent chatbots, predictive analytics, and automated content generation.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" class="mb-12 section-fade-in">
-        <h2 class="text-2xl font-bold text-brand-main glow-text mb-4">Let's Build Something Together</h2>
-        <p class="text-slate-300 mb-6">
-            Ready to transform your ideas into a powerful digital solution? Fill out the form below or <a href="mailto:furqanmehmood@hotmail.com" class="text-brand-secondary hover:underline">email me directly</a> to discuss your project.
+    <section id="portfolio" class="mb-16 section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
+        <h2 class="text-3xl font-bold text-emerald-300 mb-6">Selected Projects</h2>
+        <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Projects will be dynamically loaded here by script.js -->
+        </div>
+    </section>
+
+    <section id="experience" class="mb-16 section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
+        <h2 class="text-3xl font-bold text-emerald-300 mb-8">Work Experience</h2>
+        <div id="work-experience-container" class="relative pl-8">
+            <!-- Experience timeline will be loaded here -->
+        </div>
+    </section>
+
+    <section id="skills" class="mb-16 section-fade-in">
+        <h2 class="text-3xl font-bold text-emerald-300 mb-6">Skills & Technologies</h2>
+        <div id="skills-container" class="space-y-4">
+            <!-- Skills accordions will be loaded here -->
+        </div>
+    </section>
+
+    <section id="contact" class="section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
+        <h2 class="text-3xl font-bold text-emerald-300 mb-4">Let's Build Something Together</h2>
+        <p class="text-slate-400 mb-6 max-w-2xl">
+            Ready to transform your ideas into a powerful digital solution? Fill out the form below or <a href="mailto:furqanmehmood@hotmail.com" class="text-emerald-300 hover:underline font-medium">email me directly</a> to discuss your project.
         </p>
-        <form id="contact-form" action="https://formspree.io/f/{your-unique-id}" method="POST" enctype="multipart/form-data" class="bg-card-bg p-8 rounded-3xl shadow-lg border border-gray-700">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form id="contact-form" action="https://formspree.io/f/{your-unique-id}" method="POST" enctype="multipart/form-data">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label for="name" class="block text-sm font-medium mb-1">Name</label>
-                    <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-brand-main focus:ring-1 focus:ring-brand-main">
+                    <label for="name" class="block text-sm font-medium mb-2 text-slate-300">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-slate-900 text-white border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium mb-1">Email</label>
-                    <input type="email" id="email" name="_replyto" required class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-brand-main focus:ring-1 focus:ring-brand-main">
+                    <label for="email" class="block text-sm font-medium mb-2 text-slate-300">Email</label>
+                    <input type="email" id="email" name="_replyto" required class="w-full p-3 rounded-lg bg-slate-900 text-white border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                 </div>
             </div>
-            <div class="mt-6">
-                <label for="message" class="block text-sm font-medium mb-1">Message</label>
-                <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-brand-main focus:ring-1 focus:ring-brand-main"></textarea>
+            <div class="mt-4">
+                <label for="message" class="block text-sm font-medium mb-2 text-slate-300">Message</label>
+                <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-lg bg-slate-900 text-white border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"></textarea>
             </div>
-            <div class="mt-6">
-                <label for="attachment" class="block text-sm font-medium mb-1">Attach File</label>
-                <input type="file" id="attachment" name="attachment" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-600 file:text-white hover:file:bg-gray-500 cursor-pointer">
+            <div class="mt-4">
+                <label for="attachment" class="block text-sm font-medium mb-2 text-slate-300">Attach File (Project Brief, etc.)</label>
+                <input type="file" id="attachment" name="attachment" class="w-full text-slate-300 rounded-lg bg-slate-900 border border-slate-700 file:mr-4 file:py-3 file:px-5 file:rounded-l-lg file:border-0 file:text-sm file:font-semibold file:bg-slate-700 file:text-emerald-300 hover:file:bg-slate-600 cursor-pointer">
             </div>
-            <div class="mt-6">
-                <button type="submit" class="bg-brand-main hover:bg-brand-secondary text-black font-bold py-3 px-8 rounded-full transition-colors transform hover:scale-105 w-full md:w-auto">
+            <div class="mt-6 flex flex-wrap justify-between items-center gap-4">
+                <button type="submit" class="bg-gradient-to-r from-blue-500 to-emerald-400 text-slate-950 font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 w-full md:w-auto shadow-lg">
                     Send Message
                 </button>
+                <p class="text-sm text-slate-400" id="form-status"></p>
             </div>
-            <p class="mt-4 text-sm text-text-secondary" id="form-status"></p>
         </form>
     </section>
 
-    <footer class="text-center text-slate-500 text-sm py-8 mt-12 bg-gray-900">&copy; <span id="current-year"></span> Furqan Mehmood. All rights reserved.</footer>
+    <footer class="text-center text-slate-500 text-sm py-8 mt-12">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 max-w-6xl mx-auto px-6">
+            <span>© <span id="current-year"></span> Furqan Mehmood. All rights reserved.</span>
+            <span class="flex gap-4">
+                    <a href="imprint.html" target="_blank" class="hover:text-blue-400 transition-colors">Imprint</a>
+                    <a href="data-privacy.html" target="_blank" class="hover:text-blue-400 transition-colors">Privacy Policy</a>
+                </span>
+        </div>
+    </footer>
 </main>
 
-<div id="project-modal" class="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center p-4 hidden">
-    <div class="bg-card-bg p-8 rounded-3xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative">
-        <button class="absolute top-4 right-6 text-2xl font-bold text-gray-500 hover:text-white" onclick="document.getElementById('project-modal').classList.add('hidden')">&times;</button>
-        <h2 id="modal-title" class="text-2xl font-bold text-brand-main mb-4"></h2>
-        <div id="modal-body" class="text-text-secondary space-y-4"></div>
+<div id="project-modal" class="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-800 p-6 sm:p-8 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative border border-slate-700 shadow-2xl" onclick="event.stopPropagation()">
+        <button id="close-modal-btn" class="absolute top-4 right-6 text-3xl font-bold text-slate-500 hover:text-white transition-colors">&times;</button>
+        <h2 id="modal-title" class="text-2xl font-bold text-emerald-300 mb-4 pr-12"></h2>
+        <div id="modal-body" class="text-slate-400 space-y-4"></div>
     </div>
 </div>
 
 <script src="script.js"></script>
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
+    const modal = document.getElementById('project-modal');
+    modal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+    document.getElementById('close-modal-btn').addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
 </script>
 </body>
 </html>
+
