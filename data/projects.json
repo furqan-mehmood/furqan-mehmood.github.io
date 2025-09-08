@@ -1,21 +1,21 @@
 [
   {
     "id": "project1",
-    "title": "ParkEfficient",
+    "title": "ParkEfficient – Parking & Asset Management",
     "role": "Senior Full-Stack Developer",
-    "outcome_highlight": "Contributed to a B2B SaaS platform for intelligent parking and asset management.",
-    "description": "As part of the development team, I contributed to a comprehensive, cloud-based platform for the digital management of parking spaces. My work involved developing features for the employee parking app (ParkEfficient) and the property management hub (AssetOS), including digital access control, real-time data analysis, and automated billing systems.",
-    "tech": ["Laravel", "Vue.js", "Filament", "REST API", "Microsoft 365 APIs", "Forge", "Envoyer", "Herd", "Leaflet", "SAML SSO"],
+    "outcome_highlight": "Engineered key optimization components, integrating diverse 3rd-party cloud APIs for live hardware control and resource pooling.",
+    "description": "As a senior developer, I handled diverse responsibilities to build and scale this platform. I engineered the administrative dashboard (AssetOS) using Filament and developed core logic for the user parking app (including 'series booking,' analytics, and Leaflet.js maps). A key focus was utility optimization (contingent sharing/pooling) and integrating diverse third-party cloud APIs. This included interfacing with major parking hardware systems via the Scheidt & Bachmann (entervo) API for live barrier control, and integrating ChargeX EV chargers for charging data.",
+    "tech": ["Laravel", "Filament", "Vue.js", "Leaflet.js", "Scheidt & Bachmann API", "ChargeX API", "IoT Integration", "SAML SSO"],
     "image": "images/pe.png",
     "link": "https://parkefficient.de"
   },
   {
     "id": "project2",
-    "title": "OfficeEfficient",
+    "title": "OfficeEfficient (Workspace Management)",
     "role": "Senior Full-Stack Developer",
-    "outcome_highlight": "Key developer for a desk-sharing solution with full Microsoft 365 integration.",
-    "description": "I was a key developer on the team that built this desk-sharing software for booking workspaces, conference rooms, and parking spaces. I was responsible for implementing features in the central dashboard for data analysis and engineering the seamless integrations with Microsoft Office 365, Teams, and other calendar systems.",
-    "tech": ["Laravel", "Vue.js", "Filament", "REST API", "Microsoft 365 APIs", "Forge", "Envoyer", "Herd","Leaflet", "SAML SSO"],
+    "outcome_highlight": "Engineered the primary admin dashboard and visualization engine for a comprehensive workspace management platform.",
+    "description": "As a senior developer, I handled diverse responsibilities to build and scale the platform. I engineered the administrative dashboard using Filament and developed the core logic for the user app (including 'series booking,' data visualization, activity logs, and Leaflet.js resource maps). Responding to new client needs, I also focused on utility optimization—implementing contingent sharing and pooling logic to maximize resource use—and integrated various third-party client APIs for seamless data integration.",
+    "tech": ["Laravel", "Filament", "Vue.js", "Leaflet.js", "Data Visualization", "REST API", "SAML SSO", "MariaDB"],
     "image": "images/oe.png",
     "link": "https://officeefficient.de"
   },
@@ -25,7 +25,7 @@
     "role": "Software Developer",
     "outcome_highlight": "Led the re-architecture of a BIM application to the MERN stack, achieving major performance gains.",
     "description": "I led the backend re-architecture of this Building Information Modeling (BIM) web app, migrating it from Ruby to a modern MERN stack. I was solely responsible for the new backend architecture, Node.js/Express development, database design, and testing. A key achievement was implementing Redis for intensive calculations, which significantly improved performance. I collaborated with a teammate who developed the React.js frontend.",
-    "tech": ["React.js", "Node.js", "Express.js", "MongoDB", "Redis", "BIM", "Heroku", "Worker Dynos", "Multithreading", "Ruby", "Sinatra"],
+    "tech": ["MERN Stack", "Redis", "BIM", "Ruby", "Sinatra"],
     "image": "images/linear.png",
     "link": "https://www.ivt-flaechenheizung-schnellauslegung.de"
   },
@@ -35,7 +35,7 @@
     "role": "Full-Stack Developer",
     "outcome_highlight": "Engineered core modules for a custom business process management tool.",
     "description": "As a full-stack developer on the team, I engineered key frontend modules in Angular and developed REST APIs using LoopBack for a custom business process management software. My contributions were central to the shift planning, capacity pooling, and automated contract management features. I also built a related invoice claim mobile application using Ionic.",
-    "tech": ["Angular 5", "LoopBack", "Typescript", "Ionic", "REST API", "Material UI"],
+    "tech": ["Angular 5", "LoopBack", "MySQL", "Typescript", "Ionic", "REST API", "Material UI"],
     "image": "images/exultec.png",
     "link": "https://exultec.net/"
   },
@@ -45,7 +45,7 @@
     "role": "Data Analytics Specialist",
     "outcome_highlight": "Translated complex remittance transaction data into actionable insights and visualizations for a national financial agent.",
     "description": "I supported the comprehensive Remittance Management System by focusing on its complex financial reporting capabilities. My role was to provide technical support for data analytics, handling advanced SQL queries to extract transaction data and developing visualizations for key financial reports (like P&L, Balance Sheets, and Commission Reports).",
-    "tech": ["Data Analytics", "SQL Queries", "Information Visualization", "Financial Reporting", "PHP Yii"],
+    "tech": ["PHP", "MySQL", "jQuery"],
     "image": "images/vitcomex.png",
     "link": "https://www.goodcore.co.uk/cases/remittance-management-software/"
   },
@@ -55,8 +55,8 @@
     "role": "Software Engineer",
     "outcome_highlight": "Supported and extended a custom operations platform, automating manual relocation workflows for a global mobility company.",
     "description": "I maintained and enhanced a web application designed to digitize and centralize all client relocation operations, replacing the firm's reliance on manual Excel and Word processes. My responsibilities included both providing ongoing technical support to resolve operational issues and building several new features to expand the platform's ability to manage client data and track relocation statuses.",
-    "tech": ["PHP", "JavaScript", "AJAX", "JQuery"],
+    "tech": ["SQL Server", "JavaScript"],
     "image": "images/relacs.png",
-    "link": "https://www.goodcore.co.uk/cases/custom-relocation-management-software/"
+    "link": "https://www.goodcore.co.uk/cases/relocation-management-system/"
   }
 ]
