@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://furqan-mehmood.github.io/sitemap.xml
