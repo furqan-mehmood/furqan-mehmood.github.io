@@ -87,8 +87,16 @@
     ],
     "projects": [
       {
+        "name": "EZ-Scheduler 2.0",
+        "url": "https://www.echovisionllc.com/overview.php"
+      },
+      {
         "name": "Malaysian Medical Association",
         "url": "https://mma.org.my"
+      },
+      {
+        "name": "RelACS",
+        "url": "https://www.goodcore.co.uk/cases/relocation-management-system/"
       },
       {
         "name": "Vitcomex",
