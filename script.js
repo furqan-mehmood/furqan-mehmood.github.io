@@ -30,7 +30,7 @@ async function loadProjects() {
             card.className = 'flex flex-col bg-slate-900 rounded-xl shadow-lg border border-slate-700 overflow-hidden project-card transition-transform duration-300 hover:scale-[1.03]';
             card.dataset.projectId = project.id;
 
-            const techTags = project.tech.slice(0, 4).map(t =>
+            const techTags = project.tech.map(t =>
                 `<span class="text-xs font-medium bg-slate-700 text-blue-200 py-1 px-3 rounded-full">${t}</span>`
             ).join('');
 
