@@ -69,11 +69,12 @@
             body {
                 @apply bg-slate-900 text-slate-100 font-['Inter'];
             }
+            .timeline-line {
+                @apply absolute left-[5px] top-0 bottom-0 w-0.5 bg-slate-500;
+            }
+
             .timeline-item::before {
                 @apply content-[''] absolute left-[-14px] top-3 h-2 w-2 rounded-full bg-blue-400;
-            }
-            .timeline-line {
-                @apply absolute left-[-11px] top-[18px] bottom-0 w-0.5 bg-slate-500;
             }
         }
         .section-fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
@@ -110,27 +111,57 @@
                 Engineering <span class="bg-gradient-to-r from-blue-400 to-emerald-300 bg-clip-text text-transparent">High-Performance</span> Solutions for <span class="bg-gradient-to-r from-blue-400 to-emerald-300 bg-clip-text text-transparent">Complex Business Challenges</span>
             </h1>
             <p class="text-lg text-slate-400 max-w-3xl">
-                I engineer robust digital solutions designed to solve complex business problems by optimizing systems for enhanced utility and performance. I am now actively exploring AI to unlock new opportunities for automation and to drive business growth.
-            </p>
+                I engineer digital solutions that help businesses navigate complex challenges by optimizing resources, improving system efficiency, and enhancing usability. Recently, I’ve been exploring AI to bring smarter automation into workflows and uncover new opportunities for growth.
             <div class="mt-6 border-l-4 border-slate-700 pl-4 text-slate-400 space-y-2">
                 <h3 class="font-semibold text-slate-300 text-sm tracking-wide uppercase">Key Qualifications</h3>
                 <p class="text-sm flex items-center">
-                    <img src="https://flagsapi.com/DE/flat/64.png" alt="Germany Flag" class="h-5 w-6 mr-2">
                     MSc Media Informatics — <strong>RWTH Aachen University</strong>
                 </p>
                 <p class="text-sm flex items-center">
-                    <img src="https://flagsapi.com/PK/flat/64.png" alt="Pakistan Flag" class="h-5 w-6 mr-2">
                     BS Computer Science — <strong>FAST-NUCES Karachi</strong>
                 </p>
             </div>
             <div class="mt-8 flex flex-wrap gap-4">
-                <a href="#portfolio" class="bg-gradient-to-r from-blue-500 to-emerald-400 text-slate-950 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 shadow-lg">
-                    View My Work
+                <a href="#portfolio"
+                   class="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-emerald-400 text-slate-950 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 4l2 2h8a2 2 0 012 2v10a2
+                     2 0 01-2 2H4a2 2 0 01-2-2V6a2
+                     2 0 012-2h6z"/>
+                    </svg>
+                    View Portfolio
                 </a>
-                <a href="cv.pdf" download class="bg-slate-800 border border-slate-700 text-white font-medium py-3 px-6 rounded-lg hover:bg-slate-700 transition-colors">
+
+                <a href="https://www.linkedin.com/in/furqanmehmood/" target="_blank"
+                   class="flex items-center gap-2 bg-[#0A66C2] text-white font-medium py-3 px-6 rounded-lg hover:bg-[#084c99] transition-colors shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.77 0-5 2.23-5 5v14c0
+                     2.77 2.23 5 5 5h14c2.77
+                     0 5-2.23 5-5v-14c0-2.77-2.23-5-5-5zm-11
+                     19h-3v-10h3v10zm-1.5-11.29c-.96
+                     0-1.75-.79-1.75-1.75s.79-1.75
+                     1.75-1.75 1.75.79
+                     1.75 1.75-.79 1.75-1.75
+                     1.75zm13.5
+                     11.29h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87
+                     0-2.16 1.46-2.16
+                     2.96v5.71h-3v-10h2.88v1.36h.04c.4-.75
+                     1.38-1.54 2.85-1.54 3.05
+                     0 3.61 2.01 3.61 4.62v5.56z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+
+                <a href="cv.pdf" download
+                   class="flex items-center gap-2 bg-slate-800 border border-slate-700 text-white font-medium py-3 px-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-8
+                     2v2h16v-2H4z"/>
+                    </svg>
                     Download CV
                 </a>
             </div>
+
         </div>
         <div class="md:col-span-2">
             <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-2xl shadow-xl p-6">
@@ -145,20 +176,33 @@
     <section id="expertise" class="mb-16 section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
         <h2 class="text-3xl font-bold text-emerald-300 mb-6">My Expertise</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
             <div class="p-6 bg-slate-900 rounded-xl shadow-lg border border-slate-700 transition-transform hover:scale-[1.03]">
                 <h3 class="text-xl font-semibold text-slate-100 mb-2">Full-Stack Development (SaaS)</h3>
-                <p class="text-sm text-slate-400">I build high-performance web applications that scale, including intelligent booking and resource management systems that turn assets into new revenue opportunities.</p>
+                <p class="text-sm text-slate-400">
+                    I build reliable, high-performance web applications that scale. My work often includes booking platforms, resource management tools, and information modeling solutions that help businesses structure their data and get more value from their assets.
+                </p>
             </div>
+
             <div class="p-6 bg-slate-900 rounded-xl shadow-lg border border-slate-700 transition-transform hover:scale-[1.03]">
                 <h3 class="text-xl font-semibold text-slate-100 mb-2">MVP & Prototype Development</h3>
-                <p class="text-sm text-slate-400">I help individuals and businesses validate ideas quickly by building Minimum Viable Products (MVPs) and functional prototypes, ready for market testing and user feedback.</p>
+                <p class="text-sm text-slate-400">
+                    I support entrepreneurs and teams in testing ideas quickly by creating Minimum Viable Products (MVPs)
+                    and prototypes that are ready for early users and real-world feedback.
+                </p>
             </div>
+
             <div class="p-6 bg-slate-900 rounded-xl shadow-lg border border-slate-700 transition-transform hover:scale-[1.03]">
-                <h3 class="text-xl font-semibold text-slate-100 mb-2">AI & Automation Solutions</h3>
-                <p class="text-sm text-slate-400">Integrating advanced AI models to automate workflows, enhance decision-making, and create intelligent chatbots, predictive analytics, and automated content generation.</p>
+                <h3 class="text-xl font-semibold text-slate-100 mb-2">AI & Automation</h3>
+                <p class="text-sm text-slate-400">
+                    I’m exploring how AI can make everyday workflows smarter and simpler — from basic automation to
+                    practical tools that support better decision-making and save time.
+                </p>
             </div>
+
         </div>
     </section>
+
 
     <section id="portfolio" class="mb-16 section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
         <h2 class="text-3xl font-bold text-emerald-300 mb-6">Selected Projects</h2>
@@ -320,167 +364,96 @@
         </div>
     </section>
     <section id="experience" class="mb-16 section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
-        <h2 class="text-3xl font-bold text-emerald-300 mb-8">Work Experience</h2>
-        <div id="work-experience-container" class="relative pl-8">
-
-            <div class="relative pb-8 timeline-item">
-                <div class="timeline-line"></div>
-                <button class="w-full text-left pl-4 pr-1 py-1 flex items-start justify-between focus:outline-none relative z-10">
-                    <span class="flex items-start flex-grow">
-                        <img src="https://parkefficient.de/favicon-32x32.png" alt="Parkefficient GmbH Logo" class="h-10 w-10 mr-4 mt-1 object-contain rounded-md bg-white p-1">
-                        <span class="flex-grow">
-                            <span class="font-semibold text-emerald-300 text-lg">Senior Full Stack Developer</span>
-                            <div class="text-slate-100 font-medium">Parkefficient GmbH</div>
-                            <div class="text-slate-400 text-sm mt-1">
-                                <span>Nov 2022 - Present</span>
-                                <span class="mx-2 text-slate-600">•</span>
-                                <span>Düsseldorf, Germany</span>
-                            </div>
-                        </span>
-                    </span>
+        <h2 class="text-3xl font-bold text-emerald-300 mb-6">Work Experience</h2>
+        <div id="work-experience-container" class="space-y-6">
+            <div class="mb-4 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section">
+                <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
+                    <h3 class="text-lg font-semibold text-slate-100">Senior Full Stack Developer · Parkefficient GmbH (Nov 2022 – Present)</h3>
                     <span class="accordion-arrow text-slate-500 text-2xl font-light transform transition-transform duration-300">+</span>
                 </button>
-                <div class="accordion-content pt-3 pl-[72px] text-slate-400 hidden">
+                <div class="accordion-content p-6 hidden">
                     <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
                         <li>Developed comprehensive Laravel APIs and PHP Filament dashboards for B2B SaaS solutions.</li>
                         <li>Built responsive frontends with Vue.js for both web and hybrid mobile applications.</li>
                         <li>Implemented interactive mapping using Leaflet and integrated third-party APIs for real-time parking access and SAML-based user authentication.</li>
                     </ul>
-                    <p class="font-semibold text-emerald-400 mb-2 text-sm">Key Projects:</p>
-                    <ul class="list-disc list-outside ml-4 space-y-1">
-                        <li><a href="https://parkefficient.de" target="_blank" class="text-blue-400 hover:underline text-sm">Parkefficient</a></li>
-                        <li><a href="https://officeefficient.de" target="_blank" class="text-blue-400 hover:underline text-sm">Officefficient</a></li>
-                    </ul>
+                    <p class="mt-4">
+                        <a href="https://parkefficient.de" target="_blank" class="text-emerald-300 hover:underline">Parkefficient</a> ·
+                        <a href="https://officeefficient.de" target="_blank" class="text-emerald-300 hover:underline">Officefficient</a>
+                    </p>
                 </div>
             </div>
-
-            <div class="relative pb-8 timeline-item">
-                <div class="timeline-line"></div>
-                <button class="w-full text-left pl-4 pr-1 py-1 flex items-start justify-between focus:outline-none relative z-10">
-                    <span class="flex items-start flex-grow">
-                        <img src="https://www.linear.eu/typo3conf/ext/linear/Resources/Public/Icons/favicon.png" alt="Linear GmbH Logo" class="h-10 w-10 mr-4 mt-1 object-contain rounded-md bg-white p-1">
-                        <span class="flex-grow">
-                            <span class="font-semibold text-emerald-300 text-lg">Software Developer</span>
-                            <div class="text-slate-100 font-medium">Linear GmbH</div>
-                            <div class="text-slate-400 text-sm mt-1">
-                                <span>Jul 2020 - Oct 2022</span>
-                                <span class="mx-2 text-slate-600">•</span>
-                                <span>Aachen, Germany</span>
-                            </div>
-                        </span>
-                    </span>
+            <div class="mb-4 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section">
+                <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
+                    <h3 class="text-lg font-semibold text-slate-100">Software Developer · Linear GmbH (Jul 2020 - Oct 2022)</h3>
                     <span class="accordion-arrow text-slate-500 text-2xl font-light transform transition-transform duration-300">+</span>
                 </button>
-                <div class="accordion-content pt-3 pl-[72px] text-slate-400 hidden">
+                <div class="accordion-content p-6 hidden">
                     <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
                         <li>Redeveloped the Flächenheizung system, a Building Information Modeling (BIM) web application, from Ruby to the MERN stack, resulting in significant performance improvements.</li>
                         <li>Solely responsible for the architecture, development, and testing of the new system, implementing Redis for intensive calculations.</li>
                         <li>Built a custom React.js application to handle client requests using Jira Service Management APIs, adding advanced filtering, search, and voting features.</li>
                     </ul>
-                    <p class="font-semibold text-emerald-400 mb-2 text-sm">Key Projects:</p>
-                    <ul class="list-disc list-outside ml-4 space-y-1">
-                        <li><a href="https://www.ivt-flaechenheizung-schnellauslegung.de" target="_blank" class="text-blue-400 hover:underline text-sm">Linear Flächenheizung Schnellauslegung</a></li>
-                    </ul>
+                    <p class="mt-4">
+                        <a href="https://www.ivt-flaechenheizung-schnellauslegung.de" target="_blank" class="text-emerald-300 hover:underline">Linear Flächenheizung Schnellauslegung</a>
+                    </p>
                 </div>
             </div>
-
-            <div class="relative pb-8 timeline-item">
-                <div class="timeline-line"></div>
-                <button class="w-full text-left pl-4 pr-1 py-1 flex items-start justify-between focus:outline-none relative z-10">
-                    <span class="flex items-start flex-grow">
-                        <img src="https://exultec.net//assets/favicon/favicon-32x32.png" alt="Exultec Concepts GmbH Logo" class="h-10 w-10 mr-4 mt-1 object-contain rounded-md bg-white p-1">
-                        <span class="flex-grow">
-                            <span class="font-semibold text-emerald-300 text-lg">Full-Stack Developer</span>
-                            <div class="text-slate-100 font-medium">Exultec Concepts GmbH</div>
-                            <div class="text-slate-400 text-sm mt-1">
-                                <span>Nov 2017 - Jun 2020</span>
-                                <span class="mx-2 text-slate-600">•</span>
-                                <span>Aachen, Germany</span>
-                            </div>
-                        </span>
-                    </span>
+            <div class="mb-4 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section">
+                <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
+                    <h3 class="text-lg font-semibold text-slate-100">Full-Stack Developer · Exultec Concepts GmbH (Nov 2017 - Jun 2020)</h3>
                     <span class="accordion-arrow text-slate-500 text-2xl font-light transform transition-transform duration-300">+</span>
                 </button>
-                <div class="accordion-content pt-3 pl-[72px] text-slate-400 hidden">
+                <div class="accordion-content p-6 hidden">
                     <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
                         <li>Developed REST APIs using LoopBack and built an Ionic-based invoice claim mobile application.</li>
                         <li>Engineered Angular frontend modules for a custom business process management software (Exultec.net).</li>
-                        <li>Key modules developed include <strong class="text-slate-200">Shift Planning</strong>, <strong class="text-slate-200">Capacity Pooling</strong>, <strong class="text-slate-200">Billing</strong>, and automated <strong class="text-slate-200">Contract Management</strong>.</li>
+                        <li>Key modules developed include Shift Planning, Capacity Pooling, Billing, and automated Contract Management.</li>
                     </ul>
-                    <p class="font-semibold text-emerald-400 mb-2 text-sm">Key Projects:</p>
-                    <ul class="list-disc list-outside ml-4 space-y-1">
-                        <li><a href="https://exultec.net/" target="_blank" class="text-blue-400 hover:underline text-sm">Exultec.net</a></li>
-                    </ul>
+                    <p class="mt-4">
+                        <a href="https://exultec.net/" target="_blank" class="text-emerald-300 hover:underline">Exultec.net</a>
+                    </p>
                 </div>
             </div>
-
-            <div class="relative pb-8 timeline-item">
-                <div class="timeline-line"></div>
-                <button class="w-full text-left pl-4 pr-1 py-1 flex items-start justify-between focus:outline-none relative z-10">
-                    <span class="flex items-start flex-grow">
-                        <img src="https://ediflow.de/images/Ediflow/Logo_Ediflow_GmbH.png" alt="Ediflow GmbH Logo" class="h-10 w-10 mr-4 mt-1 object-contain rounded-md bg-white p-1">
-                        <span class="flex-grow">
-                            <span class="font-semibold text-emerald-300 text-lg">Working Student Front-End Developer</span>
-                            <div class="text-slate-100 font-medium">Ediflow GmbH</div>
-                            <div class="text-slate-400 text-sm mt-1">
-                                <span>Mar 2017 - Oct 2017</span>
-                                <span class="mx-2 text-slate-600">•</span>
-                                <span>Brühl, Germany</span>
-                            </div>
-                        </span>
-                    </span>
+            <div class="mb-4 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section">
+                <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
+                    <h3 class="text-lg font-semibold text-slate-100">Working Student Front-End Developer · Ediflow GmbH (Mar 2017 - Oct 2017)</h3>
                     <span class="accordion-arrow text-slate-500 text-2xl font-light transform transition-transform duration-300">+</span>
                 </button>
-                <div class="accordion-content pt-3 pl-[72px] text-slate-400 hidden">
+                <div class="accordion-content p-6 hidden">
                     <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
                         <li>Developed frontend modules using AngularJS for the business process optimization web application, Inqoice.</li>
                         <li>Conducted unit testing with the Jasmine framework to ensure module functionality and performance.</li>
                     </ul>
-                    <p class="font-semibold text-emerald-400 mb-2 text-sm">Key Projects:</p>
-                    <ul class="list-disc list-outside ml-4 space-y-1">
-                        <li><a href="https://ediflow.de/#projects" target="_blank" class="text-blue-400 hover:underline text-sm">Inqoice</a></li>
-                    </ul>
+                    <p class="mt-4">
+                        <a href="https://ediflow.de/#projects" target="_blank" class="text-emerald-300 hover:underline">Inqoice</a>
+                    </p>
                 </div>
             </div>
-
-            <div class="relative pb-8 timeline-item">
-                <button class="w-full text-left pl-4 pr-1 py-1 flex items-start justify-between focus:outline-none relative z-10">
-                    <span class="flex items-start flex-grow">
-                        <img src="https://cdn-addgm.nitrocdn.com/MJnTlHySegcmvxPTBPLfaINTSJyWuhDi/assets/images/optimized/rev-0526930/www.goodcore.co.uk/assets/img/favicon.ico" alt="Goodcore Software Pvt Ltd Logo" class="h-10 w-10 mr-4 mt-1 object-contain rounded-md bg-white p-1">
-                        <span class="flex-grow">
-                            <span class="font-semibold text-emerald-300 text-lg">Software Engineer</span>
-                            <div class="text-slate-100 font-medium">Goodcore Software Pvt Ltd</div>
-                            <div class="text-slate-400 text-sm mt-1">
-                                <span>Jun 2015 - Aug 2016</span>
-                                <span class="mx-2 text-slate-600">•</span>
-                                <span>Karachi, Pakistan</span>
-                            </div>
-                        </span>
-                    </span>
+            <div class="mb-4 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section">
+                <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
+                    <h3 class="text-lg font-semibold text-slate-100">Software Engineer · Goodcore Software Pvt Ltd (Jun 2015 - Aug 2016)</h3>
                     <span class="accordion-arrow text-slate-500 text-2xl font-light transform transition-transform duration-300">+</span>
                 </button>
-                <div class="accordion-content pt-3 pl-[72px] text-slate-400 hidden">
+                <div class="accordion-content p-6 hidden">
                     <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
                         <li>Contributed to a remittance management system for a CMIS Bank Malaysia agent, which provided seamless processing and administration of online and branch-originated transactions.</li>
                         <li>Developed and maintained the official web app for the Malaysian Medical Association, serving as the largest representative body of doctors in Malaysia.</li>
-                        <li>Provided technical support for key projects, including the <strong class="text-slate-200">EZ-Scheduler 2.0</strong> and <strong class="text-slate-200">RelACS – Relocation Management System</strong>.</li>
+                        <li>Provided technical support for key projects, including the **EZ-Scheduler 2.0** and **RelACS – Relocation Management System**.</li>
                     </ul>
-                    <p class="font-semibold text-emerald-400 mb-2 text-sm">Key Projects:</p>
-                    <ul class="list-disc list-outside ml-4 space-y-1">
-                        <li><a href="https://www.echovisionllc.com/overview.php" target="_blank" class="text-blue-400 hover:underline text-sm">EZ-Scheduler 2.0</a></li>
-                        <li><a href="https://mma.org.my" target="_blank" class="text-blue-400 hover:underline text-sm">Malaysian Medical Association</a></li>
-                        <li><a href="https://www.goodcore.co.uk/cases/relocation-management-system/" target="_blank" class="text-blue-400 hover:underline text-sm">RelACS</a></li>
-                        <li><a href="https://www.goodcore.co.uk/cases/remittance-management-software/" target="_blank" class="text-blue-400 hover:underline text-sm">Vitcomex</a></li>
-                    </ul>
+                    <p class="mt-4">
+                        <a href="https://www.echovisionllc.com/overview.php" target="_blank" class="text-emerald-300 hover:underline">EZ-Scheduler 2.0</a> ·
+                        <a href="https://mma.org.my" target="_blank" class="text-emerald-300 hover:underline">Malaysian Medical Association</a> ·
+                        <a href="https://www.goodcore.co.uk/cases/relocation-management-system/" target="_blank" class="text-emerald-300 hover:underline">RelACS</a> ·
+                        <a href="https://www.goodcore.co.uk/cases/remittance-management-software/" target="_blank" class="text-emerald-300 hover:underline">Vitcomex</a>
+                    </p>
                 </div>
             </div>
-
         </div>
     </section>
-    <section id="skills" class="mb-16 section-fade-in">
+    <section id="skills" class="mb-16 section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
         <h2 class="text-3xl font-bold text-emerald-300 mb-6">Skills & Technologies</h2>
         <div id="skills-container" class="space-y-4">
-
             <div class="mb-4 bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section">
                 <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
                     <h3 class="text-xl font-semibold text-emerald-300">Programming Languages</h3>
@@ -640,29 +613,35 @@
         </div>
     </section>
     <section id="contact" class="section-fade-in p-6 sm:p-8 bg-slate-800 rounded-2xl shadow-lg border border-slate-700">
-        <h2 class="text-3xl font-bold text-emerald-300 mb-4">Let's Build Something Together</h2>
+        <h2 class="text-3xl font-bold text-emerald-300 mb-4">Let’s Work on Something Great Together</h2>
         <p class="text-slate-400 mb-6 max-w-2xl">
-            Ready to transform your ideas into a powerful digital solution? Fill out the form below or <a href="mailto:furqanmehmood@hotmail.com" class="text-emerald-300 hover:underline font-medium">email me directly</a> to discuss your project.
+            Always open to meaningful opportunities and ideas — feel free to reach out via the form or
+            <a href="mailto:furqanmehmood@hotmail.com" class="text-emerald-300 hover:underline font-medium">email</a>,
+            and I’ll reply as soon as I can.
         </p>
+
         <form id="contact-form" action="https://formspree.io/f/mvgbdddw" method="POST" enctype="multipart/form-data">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label for="name" class="block text-sm font-medium mb-2 text-slate-300">Name</label>
+                    <label for="name" class="block text-sm font-medium mb-2 text-slate-300">Your Name</label>
                     <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-slate-900 text-white border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium mb-2 text-slate-300">Email</label>
+                    <label for="email" class="block text-sm font-medium mb-2 text-slate-300">Your Email</label>
                     <input type="email" id="email" name="_replyto" required class="w-full p-3 rounded-lg bg-slate-900 text-white border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                 </div>
             </div>
+
             <div class="mt-4">
                 <label for="message" class="block text-sm font-medium mb-2 text-slate-300">Message</label>
-                <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-lg bg-slate-900 text-white border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"></textarea>
+                <textarea id="message" name="message" rows="5" required placeholder="Tell me a little about your idea or project..." class="w-full p-3 rounded-lg bg-slate-900 text-white border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"></textarea>
             </div>
+
             <div class="mt-4">
-                <label for="attachment" class="block text-sm font-medium mb-2 text-slate-300">Attach File (Project Brief, etc.)</label>
+                <label for="attachment" class="block text-sm font-medium mb-2 text-slate-300">Attach a File (optional)</label>
                 <input type="file" id="attachment" name="attachment" class="w-full text-slate-300 rounded-lg bg-slate-900 border border-slate-700 file:mr-4 file:py-3 file:px-5 file:rounded-l-lg file:border-0 file:text-sm file:font-semibold file:bg-slate-700 file:text-emerald-300 hover:file:bg-slate-600 cursor-pointer">
             </div>
+
             <div class="mt-6 flex flex-wrap justify-between items-center gap-4">
                 <button type="submit" class="bg-gradient-to-r from-blue-500 to-emerald-400 text-slate-950 font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 w-full md:w-auto shadow-lg">
                     Send Message

@@ -65,25 +65,130 @@ async function initProjectModalLogic() {
     }
 }
 
-// NEW FUNCTION: Attaches listeners to the (now static) accordions.
-function initAccordionListeners() {
-    // Skills Accordion Logic
-    document.querySelectorAll('#skills-container .collapsible-section button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling;
-            const arrow = btn.querySelector('.accordion-arrow');
-            content.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-45');
-        });
-    });
+// NEW FUNCTION: Dynamically generates the Experience section
+async function initExperienceSection() {
+    const container = document.getElementById('work-experience-container');
+    if (!container) {
+        console.error('Work experience container not found.');
+        return;
+    }
 
-    // Work Experience Accordion Logic
-    document.querySelectorAll('#work-experience-container button').forEach(btn => {
+    try {
+        const response = await fetch('data/work-experience.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const experiences = await response.json();
+
+        const dynamicContent = experiences.map(exp => {
+            const descriptionList = exp.description.map(desc => `<li>${desc}</li>`).join('');
+            const projectList = exp.projects.map(proj => `<li><a href="${proj.url}" target="_blank" class="text-blue-400 hover:underline text-sm">${proj.name}</a></li>`).join('');
+
+            return `
+            <div class="mb-4 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section">
+                <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
+                    <span class="flex items-start flex-grow">
+                        <img src="${exp.logo}" alt="${exp.company} Logo" class="h-10 w-10 mr-4 mt-1 object-contain rounded-md bg-white p-1">
+                        <span class="flex-grow">
+                            <span class="font-semibold text-emerald-300 text-lg">${exp.role}</span>
+                            <div class="text-slate-100 font-medium">${exp.company}</div>
+                            <div class="text-slate-400 text-sm mt-1">
+                                <span>${exp.dates}</span>
+                                <span class="mx-2 text-slate-600">•</span>
+                                <span>${exp.location}</span>
+                            </div>
+                        </span>
+                    </span>
+                    <span class="accordion-arrow text-slate-500 text-2xl font-light transform transition-transform duration-300">+</span>
+                </button>
+                <div class="accordion-content pt-3 pl-[72px] text-slate-400 hidden">
+                    <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">${descriptionList}</ul>
+                    ${exp.projects.length > 0 ? `<p class="font-semibold text-emerald-400 mb-2 text-sm">Key Projects:</p><ul class="list-disc list-outside ml-4 space-y-1">${projectList}</ul>` : ''}
+                </div>
+            </div>
+            `;
+        }).join('');
+
+        container.innerHTML = dynamicContent;
+
+    } catch (err) {
+        console.error("Failed to load work experience data:", err);
+    }
+}
+
+// NEW FUNCTION: Dynamically generates the Skills section
+async function initSkillsSection() {
+    const container = document.getElementById('skills-container');
+    if (!container) {
+        console.error('Skills container not found.');
+        return;
+    }
+
+    try {
+        const response = await fetch('data/skills.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const categories = await response.json();
+
+        const dynamicContent = categories.map(cat => {
+            const skillItems = cat.skills.map(skill => {
+                if (skill.logo) {
+                    return `<div class="flex flex-col items-center text-center w-20 p-2"><img src="${skill.logo}" alt="${skill.name}" class="h-10 w-10 object-contain mb-2 transition-transform hover:scale-110"><span class="text-slate-400 text-xs">${skill.name}</span></div>`;
+                } else {
+                    return `<span class="bg-slate-700 text-blue-200 text-sm font-medium py-1.5 px-3 rounded-full">${skill.name}</span>`;
+                }
+            }).join('');
+
+            const contentClass = cat.skills.some(skill => skill.logo) ? "flex flex-wrap gap-4 justify-start" : "flex flex-wrap gap-3 justify-start";
+
+            return `
+                <div class="mb-4 bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section">
+                    <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
+                        <h3 class="text-xl font-semibold text-emerald-300">${cat.category}</h3>
+                        <span class="accordion-arrow text-slate-500 text-2xl font-light transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="accordion-content p-6 hidden">
+                        <div class="${contentClass}">
+                            ${skillItems}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        container.innerHTML = dynamicContent;
+
+    } catch (err) {
+        console.error("Failed to load skills data:", err);
+    }
+}
+
+// MODIFIED FUNCTION: Attaches listeners to the (now dynamic) accordions.
+function initAccordionListeners() {
+    document.querySelectorAll('.collapsible-section button').forEach(btn => {
         btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling;
+            const parent = btn.closest('.collapsible-section');
+            const content = parent.querySelector('.accordion-content');
             const arrow = btn.querySelector('.accordion-arrow');
-            content.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-45');
+
+            const isHidden = content.classList.contains('hidden');
+
+            // Close all other open accordions
+            document.querySelectorAll('.collapsible-section').forEach(section => {
+                const otherContent = section.querySelector('.accordion-content');
+                const otherArrow = section.querySelector('.accordion-arrow');
+                if (otherContent && otherArrow && section !== parent) {
+                    otherContent.classList.add('hidden');
+                    otherArrow.classList.remove('rotate-45');
+                }
+            });
+
+            // Toggle the clicked accordion
+            content.classList.toggle('hidden', !isHidden);
+            arrow.classList.toggle('rotate-45', isHidden);
+
+            // Add margin to the opened accordion's content to separate it from the next item
+            const openedContent = document.querySelector('.accordion-content:not(.hidden)');
+            if (openedContent) {
+                openedContent.style.marginBottom = '1rem'; // Add margin
+            }
         });
     });
 }
@@ -119,8 +224,10 @@ if (form) {
     });
 }
 
-// Updated DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-    initProjectModalLogic(); // Loads JSON data for modals
-    initAccordionListeners(); // Attaches listeners to static accordions
+// Corrected DOMContentLoaded
+document.addEventListener('DOMContentLoaded', async () => {
+    await initProjectModalLogic();
+    await initExperienceSection();
+    await initSkillsSection();
+    initAccordionListeners();
 });

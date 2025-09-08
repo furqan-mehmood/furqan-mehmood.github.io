@@ -176,157 +176,36 @@
     ]
   },
   {
-    "category": "Software Architecture & Development Practices",
+    "category": "Software Architecture & Development",
     "skills": [
-      {
-        "name": "Agile",
-        "logo": ""
-      },
-      {
-        "name": "API-first development",
-        "logo": ""
-      },
-      {
-        "name": "Authentication (JWT, OAuth 2.0)",
-        "logo": ""
-      },
-      {
-        "name": "CI/CD",
-        "logo": ""
-      },
-      {
-        "name": "Eloquent ORM",
-        "logo": ""
-      },
-      {
-        "name": "Full-stack development",
-        "logo": ""
-      },
-      {
-        "name": "GDPR compliance",
-        "logo": ""
-      },
-      {
-        "name": "Internationalization (i18n)",
-        "logo": ""
-      },
-      {
-        "name": "Kanban",
-        "logo": ""
-      },
-      {
-        "name": "Microservices",
-        "logo": ""
-      },
-      {
-        "name": "MVC architecture",
-        "logo": ""
-      },
-      {
-        "name": "MVP",
-        "logo": ""
-      },
-      {
-        "name": "Performance optimization",
-        "logo": ""
-      },
-      {
-        "name": "Peer reviews",
-        "logo": ""
-      },
-      {
-        "name": "REST APIs",
-        "logo": ""
-      },
-      {
-        "name": "SaaS",
-        "logo": ""
-      },
-      {
-        "name": "Scrum",
-        "logo": ""
-      },
-      {
-        "name": "Server-side rendering",
-        "logo": ""
-      },
-      {
-        "name": "SOLID principles",
-        "logo": ""
-      },
-      {
-        "name": "TDD",
-        "logo": ""
-      },
-      {
-        "name": "Unit Testing",
-        "logo": ""
-      }
+      { "name": "Agile", "logo": "" },
+      { "name": "API-first Development", "logo": "" },
+      { "name": "Authentication (JWT, OAuth 2.0)", "logo": "" },
+      { "name": "CI/CD", "logo": "" },
+      { "name": "Eloquent ORM", "logo": "" },
+      { "name": "Full-Stack Development", "logo": "" },
+      { "name": "GDPR Compliance", "logo": "" },
+      { "name": "Internationalization (i18n)", "logo": "" },
+      { "name": "Microservices", "logo": "" },
+      { "name": "MVC Architecture", "logo": "" },
+      { "name": "MVP Development", "logo": "" },
+      { "name": "Performance Optimization", "logo": "" },
+      { "name": "REST APIs", "logo": "" },
+      { "name": "SaaS", "logo": "" },
+      { "name": "Server-Side Rendering", "logo": "" },
+      { "name": "SOLID Principles", "logo": "" },
+      { "name": "TDD / Unit Testing", "logo": "" }
     ]
   },
   {
-    "category": "Soft Skills & Communication",
+    "category": "Soft Skills & Collaboration",
     "skills": [
-      {
-        "name": "Adaptability",
-        "logo": ""
-      },
-      {
-        "name": "Agile Methodologies",
-        "logo": ""
-      },
-      {
-        "name": "Client Relationship Management",
-        "logo": ""
-      },
-      {
-        "name": "Collaboration",
-        "logo": ""
-      },
-      {
-        "name": "Conflict Resolution",
-        "logo": ""
-      },
-      {
-        "name": "Constructive Feedback",
-        "logo": ""
-      },
-      {
-        "name": "Continuous Learning",
-        "logo": ""
-      },
-      {
-        "name": "Critical Thinking",
-        "logo": ""
-      },
-      {
-        "name": "Cross-functional Collaboration",
-        "logo": ""
-      },
-      {
-        "name": "Mentoring",
-        "logo": ""
-      },
-      {
-        "name": "Problem Solving",
-        "logo": ""
-      },
-      {
-        "name": "Remote Work",
-        "logo": ""
-      },
-      {
-        "name": "Team Leadership",
-        "logo": ""
-      },
-      {
-        "name": "Technical Communication",
-        "logo": ""
-      },
-      {
-        "name": "Time Management",
-        "logo": ""
-      }
+      { "name": "Client Relationship Management", "logo": "" },
+      { "name": "Collaboration", "logo": "" },
+      { "name": "Mentoring", "logo": "" },
+      { "name": "Problem Solving", "logo": "" },
+      { "name": "Team Leadership", "logo": "" },
+      { "name": "Technical Communication", "logo": "" }
     ]
   },
   {
