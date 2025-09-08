@@ -1,144 +1,101 @@
-// --- Scroll animation for sections ---
-const sections = document.querySelectorAll('.section-fade-in');
+// Function to handle the scroll-in animation for sections
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('section-visible');
+        if (entry.isIntersecting) {
+            entry.target.classList.add('section-visible');
+            observer.unobserve(entry.target);
+        }
     });
-}, { threshold: 0.1 });
-sections.forEach(section => observer.observe(section));
+}, { threshold: 0.2 });
+document.querySelectorAll('.section-fade-in').forEach(section => observer.observe(section));
 
-// --- Portfolio: Fetch JSON and render cards ---
+// Function to dynamically load and display portfolio projects
 async function loadProjects() {
     try {
         const response = await fetch('data/projects.json');
         const projects = await response.json();
         const portfolioGrid = document.getElementById('portfolio-grid');
 
-        // Render project cards
+        // Render project cards with a single-line description
         projects.forEach(project => {
             const card = document.createElement('div');
-            card.classList.add(
-                'bg-gray-800', 'p-4', 'rounded-2xl', 'shadow-lg', 'project-card',
-                'cursor-pointer', 'hover:shadow-teal-500/20', 'transition-transform', 'hover:scale-105'
-            );
+            card.classList.add('bg-gray-800', 'p-4', 'rounded-2xl', 'shadow-lg', 'project-card', 'cursor-pointer', 'hover:shadow-brand-secondary/20', 'transition-transform', 'hover:scale-105');
             card.dataset.projectId = project.id;
-
             card.innerHTML = `
                 <div class="h-40 bg-gray-900 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
                     <img src="${project.image || 'https://via.placeholder.com/300x200'}" alt="${project.title}" class="w-full h-full object-cover">
                 </div>
-                <p class="text-slate-300 text-sm font-semibold text-center">${project.title}</p>
+                <p class="text-text-primary text-sm font-semibold text-center">${project.title}</p>
+                <p class="text-text-secondary text-xs text-center mt-1">${project.description.split('.')[0] || 'Web Development'}</p>
             `;
-
             portfolioGrid.appendChild(card);
         });
 
-        // --- Modal: Event delegation ---
+        // Event listener for project card clicks to show modal
         const modal = document.getElementById('project-modal');
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
-        const closeBtn = document.querySelector('.modal-close');
 
         portfolioGrid.addEventListener('click', (e) => {
             const card = e.target.closest('.project-card');
             if (!card) return;
-
             const projectId = card.dataset.projectId;
             const project = projects.find(p => p.id === projectId);
             if (!project) return;
 
             modalTitle.textContent = project.title;
-
-            const techList = project.tech.map(t => `<li class="inline-block"><span class="tech-tag">${t}</span></li>`).join('');
+            const techList = project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
             modalBody.innerHTML = `
-                <p class="text-slate-300 font-semibold text-lg mb-2">Role: ${project.role}</p>
-                <p class="text-slate-400 mb-4">${project.description}</p>
-                <p class="text-slate-300 font-semibold mb-2">Tech Used:</p>
-                <ul class="flex flex-wrap gap-2 mb-4">${techList}</ul>
+                <p class="text-text-primary font-semibold text-lg mb-2">Role: ${project.role}</p>
+                <p class="text-text-secondary mb-4">${project.description}</p>
+                <p class="text-text-primary font-semibold mb-2">Tech Used:</p>
+                <div class="flex flex-wrap gap-2 mb-4">${techList}</div>
                 <img src="${project.image || 'https://via.placeholder.com/300x200'}" class="rounded-lg w-full mb-4">
-                ${project.link && project.link !== "#" ? `<p class="mt-2"><a href="${project.link}" target="_blank" class="text-teal-400 hover:underline">🔗 Visit Project</a></p>` : ''}
+                ${project.link && project.link !== "#" ? `<p class="mt-2"><a href="${project.link}" target="_blank" class="text-brand-main hover:underline">🔗 Visit Project</a></p>` : ''}
             `;
-
-            modal.style.display = 'flex';
+            modal.classList.remove('hidden');
         });
-
-        closeBtn.addEventListener('click', () => modal.style.display = 'none');
-        window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
-
     } catch (err) {
         console.error("Failed to load projects:", err);
     }
 }
 
-// --- Skills: Fetch JSON and render ---
+// Function to dynamically load and display skills
 async function loadSkills() {
     try {
         const response = await fetch('data/skills.json');
         const skillsData = await response.json();
         const skillsContainer = document.getElementById('skills-container');
 
-        // Clear existing content
-        skillsContainer.innerHTML = '';
-
-        const layoutMap = {
-            "Soft Skills & Communication": (skills) => `
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    ${skills.map(skill => `
-                        <div class="flex items-center space-x-3 p-4 bg-gray-800 rounded-lg border border-gray-700">
-                            ${skill.logo ? `<img src="${skill.logo}" alt="${skill.name}" class="h-8 w-8 object-contain shrink-0">` : ''}
-                            <span class="text-slate-300">${skill.name}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `,
-            "Software Architecture & Development Practices": (skills) => `
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    ${skills.map(skill => `
-                        <div class="flex items-center space-x-3 p-4 bg-gray-800 rounded-lg border border-gray-700">
-                            ${skill.logo ? `<img src="${skill.logo}" alt="${skill.name}" class="h-8 w-8 object-contain shrink-0">` : ''}
-                            <span class="text-slate-300">${skill.name}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `,
-            "default": (skills) => `
-                <div class="flex flex-wrap gap-4">
-                    ${skills.map(skill => `
-                        <div class="flex flex-col items-center text-center w-20">
-                            <img src="${skill.logo}" alt="${skill.name}" class="h-12 w-12 object-contain mb-1">
-                            <span class="text-slate-300 text-sm">${skill.name}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `
-        };
-
         skillsData.forEach(category => {
+            const skillsHtml = category.skills.map(skill => `
+                <div class="flex flex-col items-center text-center w-20">
+                    ${skill.logo ? `<img src="${skill.logo}" alt="${skill.name}" class="h-12 w-12 object-contain mb-1">` : `<div class="h-12 w-12 bg-gray-700 rounded-full flex items-center justify-center text-xs p-1">${skill.name}</div>`}
+                    <span class="text-text-secondary text-sm">${skill.name}</span>
+                </div>
+            `).join('');
+
             const categoryDiv = document.createElement('div');
-            categoryDiv.classList.add('mb-8', 'bg-gray-800', 'rounded-2xl', 'overflow-hidden', 'shadow-lg', 'collapsible-section');
-
-            const layoutFunction = layoutMap[category.category] || layoutMap.default;
-            const skillsHtml = layoutFunction(category.skills);
-
+            categoryDiv.classList.add('mb-8', 'bg-card-bg', 'rounded-2xl', 'overflow-hidden', 'shadow-lg', 'collapsible-section');
             categoryDiv.innerHTML = `
                 <button class="w-full text-left px-6 py-4 bg-gray-900 hover:bg-gray-700 flex justify-between items-center focus:outline-none">
-                    <h3 class="text-xl font-semibold text-cyan-400">${category.category}</h3>
-                    <span class="accordion-arrow text-slate-300 text-xl">&#9656;</span>
+                    <h3 class="text-xl font-semibold text-brand-secondary">${category.category}</h3>
+                    <span class="accordion-arrow text-text-secondary text-xl">&#9656;</span>
                 </button>
-                <div class="accordion-content px-6 py-4 text-slate-300 hidden">
-                    ${skillsHtml}
+                <div class="accordion-content px-6 py-4 hidden">
+                    <div class="flex flex-wrap gap-4 justify-start">
+                        ${skillsHtml}
+                    </div>
                 </div>
             `;
             skillsContainer.appendChild(categoryDiv);
         });
 
-        // Accordion toggle for skills
         document.querySelectorAll('#skills-container .collapsible-section button').forEach(btn => {
             btn.addEventListener('click', () => {
                 const content = btn.nextElementSibling;
                 content.classList.toggle('hidden');
-                const arrow = btn.querySelector('.accordion-arrow');
-                arrow.innerHTML = content.classList.contains('hidden') ? '&#9656;' : '&#9662;';
+                btn.querySelector('.accordion-arrow').innerHTML = content.classList.contains('hidden') ? '&#9656;' : '&#9662;';
             });
         });
 
@@ -147,8 +104,7 @@ async function loadSkills() {
     }
 }
 
-
-// --- Work Experience: Fetch JSON and render accordion ---
+// Function to dynamically load and display work experience as a timeline
 async function loadWorkExperience() {
     try {
         const response = await fetch('data/work-experience.json');
@@ -157,59 +113,85 @@ async function loadWorkExperience() {
 
         experiences.forEach((exp, index) => {
             const expDiv = document.createElement('div');
-            expDiv.classList.add('mb-4', 'bg-gray-800', 'rounded-2xl', 'overflow-hidden', 'shadow-lg');
+            expDiv.classList.add('relative', 'pb-8', 'timeline-item');
+            if (index < experiences.length - 1) {
+                const line = document.createElement('div');
+                line.classList.add('timeline-line');
+                expDiv.appendChild(line);
+            }
 
-            // Process the description to replace ** with <strong> tags
-            const processedDescription = exp.description.map(d =>
-                d.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            );
+            const processedDescription = exp.description.map(d => d.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'));
 
-            expDiv.innerHTML = `
-                <button class="w-full text-left px-6 py-4 bg-gray-900 hover:bg-gray-700 flex items-start justify-between focus:outline-none">
-                    <span class="flex items-start">
-                        ${exp.logo ? `<img src="${exp.logo}" alt="${exp.company} Logo" class="h-12 w-12 mr-4 mt-1 object-contain">` : ''}
+            expDiv.innerHTML += `
+                <button class="w-full text-left pl-4 pr-1 py-1 flex items-start justify-between focus:outline-none relative z-10">
+                    <span class="flex items-start flex-grow">
+                        ${exp.logo ? `<img src="${exp.logo}" alt="${exp.company} Logo" class="h-10 w-10 mr-4 mt-1 object-contain">` : ''}
                         <span class="flex-grow">
-                            <span class="font-semibold text-cyan-400 text-lg">${exp.role}</span>
-                            <div class="text-slate-300">${exp.company}</div>
-                            <div class="text-slate-400 text-sm mt-1">
+                            <span class="font-semibold text-brand-secondary text-lg">${exp.role}</span>
+                            <div class="text-text-primary">${exp.company}</div>
+                            <div class="text-text-secondary text-sm mt-1">
                                 <span>${exp.dates}</span>
-                                <span class="mx-2 text-slate-500">•</span>
+                                <span class="mx-2 text-gray-600">•</span>
                                 <span>${exp.location}</span>
                             </div>
                         </span>
                     </span>
-                    <span class="accordion-arrow text-slate-300 text-xl">&#9656;</span>
+                    <span class="accordion-arrow text-text-secondary text-xl">&#9656;</span>
                 </button>
-                <div class="accordion-content px-6 py-4 text-slate-300 hidden">
-                    <ul class="mb-2 list-disc list-inside space-y-2">
+                <div class="accordion-content pt-2 pl-14 text-text-secondary hidden">
+                    <ul class="list-disc list-inside space-y-2 mb-4">
                         ${processedDescription.map(d => `<li class="text-sm leading-relaxed">${d}</li>`).join('')}
                     </ul>
-                    ${exp.projects && exp.projects.length ? `<p class="font-semibold text-teal-400 mt-4 mb-2">Projects:</p>
+                    ${exp.projects && exp.projects.length ? `<p class="font-semibold text-brand-main mb-2">Projects:</p>
                         <ul class="list-disc list-inside ml-4 space-y-1">
-                            ${exp.projects.map(p => `<li><a href="${p.url}" target="_blank" class="text-cyan-400 hover:underline text-sm">${p.name}</a></li>`).join('')}
+                            ${exp.projects.map(p => `<li><a href="${p.url}" target="_blank" class="text-brand-secondary hover:underline text-sm">${p.name}</a></li>`).join('')}
                         </ul>` : ''}
                 </div>
             `;
-
             container.appendChild(expDiv);
         });
 
-        // Accordion toggle for work experience
         document.querySelectorAll('#work-experience-container button').forEach(btn => {
             btn.addEventListener('click', () => {
                 const content = btn.nextElementSibling;
                 content.classList.toggle('hidden');
-                const arrow = btn.querySelector('.accordion-arrow');
-                arrow.innerHTML = content.classList.contains('hidden') ? '&#9656;' : '&#9662;';
+                btn.querySelector('.accordion-arrow').innerHTML = content.classList.contains('hidden') ? '&#9656;' : '&#9662;';
             });
         });
-
     } catch (err) {
         console.error("Failed to load work experience:", err);
     }
 }
 
-// --- Initialize all ---
+// Handle Formspree submission
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formStatus.textContent = 'Sending...';
+    formStatus.style.color = '#fff';
+
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    if (response.ok) {
+        formStatus.textContent = 'Thank you for your message! I will get back to you shortly.';
+        formStatus.style.color = '#38a3a5';
+        form.reset();
+    } else {
+        formStatus.textContent = 'Oops! There was a problem sending your message.';
+        formStatus.style.color = '#ef4444';
+    }
+});
+
+// Initialize all content loading
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
     loadSkills();
