@@ -28,8 +28,8 @@
     "dates": "Jul 2020 - Oct 2022",
     "logo": "https://www.linear.eu/typo3conf/ext/linear/Resources/Public/Icons/favicon.png",
     "description": [
-      "Redeveloped the Flächenheizung system, a Building Information Modeling (BIM) web application, from Ruby to the MERN stack, resulting in significant performance improvements.",
-      "Solely responsible for the architecture, development, and testing of the new system, implementing Redis for intensive calculations.",
+      "As co-developer, led the backend migration of the Flächenheizung BIM web application from Ruby/Sinatra to MERN stack, achieving 50x performance improvement: from 50 rooms (impossible to calculate) to 2,500 rooms in 5 seconds.",
+      "Solely responsible for backend architecture, Node.js/Express development, database design, and testing. Implemented Redis for intensive calculations, transforming system capabilities.",
       "Built a custom React.js application to handle client requests using Jira Service Management APIs, adding advanced filtering, search, and voting features."
     ],
     "projects": [

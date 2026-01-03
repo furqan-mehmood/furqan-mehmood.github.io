@@ -13,9 +13,9 @@
     "id": "project2",
     "title": "OfficeEfficient – Workspace Management",
     "role": "Senior Full-Stack Developer",
-    "outcome_highlight": "Built the main admin dashboard and data visualization engine for a full workspace management solution.",
-    "description": "I worked on both the backend and frontend to shape this platform. My role included building the admin dashboard with Filament and implementing core features for the user app, such as series bookings, activity logs, and resource maps with Leaflet.js. I also focused on utility optimization by adding sharing and pooling logic, and integrated external APIs to meet client requirements.",
-    "tech": ["Laravel", "Filament", "Vue.js", "Leaflet.js", "Data Visualization", "REST API", "SAML SSO", "MariaDB"],
+    "outcome_highlight": "Built the main admin dashboard and data visualization engine, leveraging AI-powered development with Laravel Boost, Claude, and Gemini CLI.",
+    "description": "I worked on both the backend and frontend to shape this platform. My role included building the admin dashboard with Filament and implementing core features for the user app, such as series bookings, activity logs, and resource maps with Leaflet.js. I also focused on utility optimization by adding sharing and pooling logic, and integrated external APIs to meet client requirements. This project involved exploring AI-powered development workflows using Laravel Boost with Claude and Gemini CLI to accelerate development cycles.",
+    "tech": ["Laravel", "Filament", "Vue.js", "Leaflet.js", "Data Visualization", "REST API", "SAML SSO", "MariaDB", "Laravel Boost", "AI Development"],
     "image": "images/oe.png",
     "link": "https://officeefficient.de"
   },
@@ -23,8 +23,8 @@
     "id": "project3",
     "title": "Linear – Heating Design BIM Tool",
     "role": "Software Developer",
-    "outcome_highlight": "Rebuilt a BIM web app on the MERN stack, boosting performance with a modern backend architecture.",
-    "description": "I led the backend migration of this Building Information Modeling (BIM) app from Ruby/Sinatra to the MERN stack. My responsibilities included backend architecture, Node.js/Express development, database design, and testing. I also introduced Redis to handle heavy calculations, which significantly improved speed. The frontend was developed in React.js by a teammate.",
+    "outcome_highlight": "Rebuilt a BIM web app on the MERN stack, achieving 50x performance improvement: from 50 rooms in minutes to 2,500 rooms in 5 seconds.",
+    "description": "I led the backend migration of this Building Information Modeling (BIM) app from Ruby/Sinatra to the MERN stack. As co-developer, I was solely responsible for the architecture, Node.js/Express development, database design, and testing. I introduced Redis to handle intensive calculations, which transformed the system's capability: calculations that previously failed at 50 rooms now process 2,500 rooms in just 5 seconds — a 50x improvement. The frontend was developed in React.js by a teammate.",
     "tech": ["MERN Stack", "Redis", "BIM", "Ruby", "Sinatra"],
     "image": "images/linear.png",
     "link": "https://www.ivt-flaechenheizung-schnellauslegung.de"

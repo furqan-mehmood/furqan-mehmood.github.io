@@ -1,46 +1,30 @@
 [
   {
-    "category": "Programming Languages",
+    "category": "Core Technologies",
     "skills": [
       {
-        "name": "C",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
-      },
-      {
-        "name": "C++",
-        "logo": "https://isocpp.org/assets/images/cpp_logo.png"
-      },
-      {
-        "name": "CSS",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
-      },
-      {
-        "name": "HTML",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
-      },
-      {
-        "name": "Java",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
+        "name": "PHP",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
       },
       {
         "name": "JavaScript",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
       },
       {
-        "name": "PHP",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
-      },
-      {
-        "name": "Ruby",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg"
+        "name": "TypeScript",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
       },
       {
         "name": "SQL",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
       },
       {
-        "name": "TypeScript",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+        "name": "HTML",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+      },
+      {
+        "name": "CSS",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
       }
     ]
   },
@@ -48,12 +32,20 @@
     "category": "Frameworks & Libraries",
     "skills": [
       {
-        "name": "Angular.js",
-        "logo": "https://angular.io/assets/images/logos/angular/angular.svg"
+        "name": "Laravel",
+        "logo": "https://laravel.com/img/logomark.min.svg"
       },
       {
-        "name": "Bootstrap",
-        "logo": "https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg"
+        "name": "Vue.js",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+      },
+      {
+        "name": "React.js",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+      },
+      {
+        "name": "Node.js",
+        "logo": "https://nodejs.org/static/images/logo.svg"
       },
       {
         "name": "Express.js",
@@ -64,73 +56,37 @@
         "logo": "https://laramate.de/storage/assets/icons/filament-php-icon.png"
       },
       {
-        "name": "Ionic",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/24/Ionic-logo-landscape.svg"
-      },
-      {
-        "name": "Laravel",
-        "logo": "https://laravel.com/img/logomark.min.svg"
-      },
-      {
-        "name": "Loopback",
-        "logo": "https://loopback.io/images/global/loopback-mark-frame-white.svg"
-      },
-      {
-        "name": "MaterialUI",
-        "logo": "https://mui.com/static/logo.png"
-      },
-      {
-        "name": "Node.js",
-        "logo": "https://nodejs.org/static/images/logo.svg"
-      },
-      {
-        "name": "React.js",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-      },
-      {
-        "name": "Sinatra",
-        "logo": "https://sinatrarb.com/images/logo.png"
-      },
-      {
         "name": "Tailwind CSS",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
       },
       {
-        "name": "Vue.js",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
-      },
-      {
-        "name": "Yii",
-        "logo": "https://www.yiiframework.com/image/logo.svg"
+        "name": "Angular.js",
+        "logo": "https://angular.io/assets/images/logos/angular/angular.svg"
       }
     ]
   },
   {
-    "category": "Databases & Tools",
+    "category": "Databases & Caching",
     "skills": [
-      {
-        "name": "MariaDB",
-        "logo": "https://mariadb.org/wp-content/themes/twentynineteen-child/icons/logo_seal.svg"
-      },
-      {
-        "name": "MongoDB",
-        "logo": "https://www.mongodb.com/assets/images/global/favicon.ico"
-      },
       {
         "name": "MySQL",
         "logo": "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg"
+      },
+      {
+        "name": "MariaDB",
+        "logo": "https://mariadb.org/wp-content/themes/twentynineteen-child/icons/logo_seal.svg"
       },
       {
         "name": "PostgresSQL",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
       },
       {
-        "name": "Redis",
-        "logo": "https://redis.io//wp-content/themes/wpx/assets/images/favicons/favicon-32x32.png?v=1720078588"
+        "name": "MongoDB",
+        "logo": "https://www.mongodb.com/assets/images/global/favicon.ico"
       },
       {
-        "name": "SQLite",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg"
+        "name": "Redis",
+        "logo": "https://redis.io//wp-content/themes/wpx/assets/images/favicons/favicon-32x32.png?v=1720078588"
       }
     ]
   },
@@ -176,36 +132,16 @@
     ]
   },
   {
-    "category": "Software Architecture & Development",
+    "category": "Architecture & Practices",
     "skills": [
-      { "name": "Agile", "logo": "" },
-      { "name": "API-first Development", "logo": "" },
-      { "name": "Authentication (JWT, OAuth 2.0)", "logo": "" },
-      { "name": "CI/CD", "logo": "" },
-      { "name": "Eloquent ORM", "logo": "" },
-      { "name": "Full-Stack Development", "logo": "" },
-      { "name": "GDPR Compliance", "logo": "" },
-      { "name": "Internationalization (i18n)", "logo": "" },
+      { "name": "SaaS Development", "logo": "" },
+      { "name": "REST APIs", "logo": "" },
+      { "name": "Performance Optimization", "logo": "" },
       { "name": "Microservices", "logo": "" },
       { "name": "MVC Architecture", "logo": "" },
-      { "name": "MVP Development", "logo": "" },
-      { "name": "Performance Optimization", "logo": "" },
-      { "name": "REST APIs", "logo": "" },
-      { "name": "SaaS", "logo": "" },
-      { "name": "Server-Side Rendering", "logo": "" },
       { "name": "SOLID Principles", "logo": "" },
-      { "name": "TDD / Unit Testing", "logo": "" }
-    ]
-  },
-  {
-    "category": "Soft Skills & Collaboration",
-    "skills": [
-      { "name": "Client Relationship Management", "logo": "" },
-      { "name": "Collaboration", "logo": "" },
-      { "name": "Mentoring", "logo": "" },
-      { "name": "Problem Solving", "logo": "" },
-      { "name": "Team Leadership", "logo": "" },
-      { "name": "Technical Communication", "logo": "" }
+      { "name": "CI/CD", "logo": "" },
+      { "name": "GDPR Compliance", "logo": "" }
     ]
   },
   {
@@ -229,4 +165,5 @@
       }
     ]
   }
+]
 ]
