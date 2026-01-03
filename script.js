@@ -84,13 +84,59 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 
-// MODIFIED FUNCTION: Only loads data for the modal, does NOT build project cards.
-async function initProjectModalLogic() {
+async function initPortfolioGrid() {
+    const container = document.getElementById('portfolio-grid');
+    if (!container) {
+        console.error('Portfolio grid container not found.');
+        return;
+    }
+
     try {
         const response = await fetch('data/projects.json');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const projects = await response.json();
 
+        const dynamicContent = projects.map(project => {
+            const techList = project.tech.map(t => `<span class="text-xs font-medium bg-accent-blue/50 text-light-text py-1 px-3 rounded-full">${t}</span>`).join('');
+            const projectCardClass = `flex flex-col bg-dark-bg rounded-xl shadow-xl border border-dark-border overflow-hidden project-card transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:-translate-y-1 hover:border-accent-blue/50 ${project.active === false ? 'opacity-75' : ''}`;
+
+            return `
+            <article class="${projectCardClass}" data-project-id="${project.id}">
+                <img src="${project.image}" alt="${project.title}" class="w-full aspect-video object-cover border-b border-dark-border">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-light-text mb-2">${project.title}</h3>
+                    <p class="text-medium-text text-sm flex-grow">${project.short_description}</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        ${techList}
+                    </div>
+                </div>
+                <div class="flex gap-3 p-4 border-t border-dark-border bg-dark-bg/50">
+                    <a href="#" class="js-modal-trigger flex items-center gap-2 text-light-text hover:text-accent-emerald text-sm font-medium transition-all hover:gap-3 px-3 py-2 rounded-lg hover:bg-dark-card/50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        View Details
+                    </a>
+                    ${project.link && project.link !== "#" ? `<a href="${project.link}" target="_blank" rel="noopener" class="flex items-center gap-2 text-light-text hover:text-accent-emerald text-sm font-medium transition-all hover:gap-3 px-3 py-2 rounded-lg hover:bg-dark-card/50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        View Live
+                    </a>` : ''}
+                </div>
+            </article>
+            `;
+        }).join('');
+
+        container.innerHTML = dynamicContent;
+        // After rendering projects, initialize the modal logic that depends on them
+        initProjectModalLogic(projects);
+
+    } catch (err) {
+        console.error("Failed to load portfolio projects:", err);
+        showErrorState(container, 'Failed to load projects.');
+    }
+}
+
+// MODIFIED FUNCTION: Only loads data for the modal, does NOT build project cards.
+async function initProjectModalLogic(projects) {
+    try {
         const portfolioGrid = document.getElementById('portfolio-grid');
         const modal = document.getElementById('project-modal');
         const modalTitle = document.getElementById('modal-title');
@@ -116,17 +162,15 @@ async function initProjectModalLogic() {
             if (!project) return;
 
             modalTitle.textContent = project.title;
-            const modalTechList = project.tech.map(t =>
-                `<span class="inline-block bg-blue-900/50 text-emerald-300 py-1 px-3 rounded-full text-sm font-medium border border-blue-800">${t}</span>`
-            ).join('');
+            const modalTechList = project.tech.map(t => `<span class="inline-block bg-accent-blue/50 text-light-text py-1 px-3 rounded-full text-sm font-medium border border-accent-blue">${t}</span>`).join('');
 
             modalBody.innerHTML = `
-                <p class="text-slate-100 font-semibold text-lg mb-2">Role: ${project.role}</p>
-                <p class="text-slate-300 mb-4 text-base leading-relaxed">${project.description}</p>
-                <p class="text-slate-100 font-semibold mb-3">Technologies Used:</p>
+                <p class="text-light-text font-semibold text-lg mb-2">Role: ${project.role}</p>
+                <p class="text-light-text mb-4 text-base leading-relaxed">${project.description}</p>
+                <p class="text-light-text font-semibold mb-3">Technologies Used:</p>
                 <div class="flex flex-wrap gap-2 mb-6">${modalTechList}</div>
-                <img src="${project.image || 'https://dummyimage.com/600x300/1e293b/60a5fa&text=Project'}" class="rounded-lg w-full mb-4 border border-slate-700" alt="${project.title}">
-                ${project.link && project.link !== "#" ? `<p><a href="${project.link}" target="_blank" rel="noopener" class="text-emerald-300 hover:text-emerald-200 hover:underline font-bold inline-flex items-center gap-2 transition-colors">
+                <img src="${project.image || 'https://dummyimage.com/600x300/1e293b/60a5fa&text=Project'}" class="rounded-lg w-full mb-4 border border-dark-border" alt="${project.title}">
+                ${project.link && project.link !== "#" ? `<p><a href="${project.link}" target="_blank" rel="noopener" class="text-accent-emerald hover:text-accent-emerald hover:underline font-bold inline-flex items-center gap-2 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     Visit Live Project
                 </a></p>` : ''}
@@ -155,30 +199,30 @@ async function initExperienceSection() {
 
         const dynamicContent = experiences.map(exp => {
             const descriptionList = exp.description.map(desc => `<li class="mb-2">${desc}</li>`).join('');
-            const projectList = exp.projects.map(proj => `<li class="mb-1"><a href="${proj.url}" target="_blank" rel="noopener" class="text-blue-400 hover:text-emerald-300 hover:underline text-sm transition-colors">${proj.name}</a></li>`).join('');
+            const projectList = exp.projects.map(proj => `<li class="mb-1"><a href="${proj.url}" target="_blank" rel="noopener" class="text-light-text hover:text-accent-emerald hover:underline text-sm transition-colors">${proj.name}</a></li>`).join('');
 
             return `
-            <div class="mb-4 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section hover:border-slate-600 transition-colors">
-                <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-lg transition-colors" aria-expanded="false">
+            <div class="mb-4 bg-dark-bg rounded-2xl overflow-hidden shadow-lg border border-dark-border collapsible-section hover:border-accent-emerald transition-colors hover:scale-[1.01]">
+                <button class="w-full text-left px-6 py-4 bg-dark-bg/50 hover:bg-dark-border/50 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-accent-blue rounded-lg transition-colors" aria-expanded="false">
                     <span class="flex items-start flex-grow gap-4">
                         <img src="${exp.logo}" alt="${exp.company} Logo" class="h-12 w-12 object-contain rounded-md bg-white p-1.5 flex-shrink-0" onerror="this.style.display='none'">
                         <span class="flex-grow">
-                            <span class="font-semibold text-emerald-300 text-lg block mb-1">${exp.role}</span>
-                            <div class="text-slate-100 font-medium mb-1">${exp.company}</div>
-                            <div class="text-slate-400 text-sm">
+                            <span class="font-semibold text-accent-emerald text-lg block mb-1">${exp.role}</span>
+                            <div class="text-light-text font-medium mb-1">${exp.company}</div>
+                            <div class="text-medium-text text-sm">
                                 <span>${exp.dates}</span>
-                                <span class="mx-2 text-slate-600">•</span>
+                                <span class="mx-2 text-medium-text">•</span>
                                 <span>${exp.location}</span>
                             </div>
                         </span>
                     </span>
-                    <svg class="accordion-arrow w-6 h-6 text-slate-400 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="accordion-arrow w-6 h-6 text-medium-text transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div class="accordion-content px-6 pb-6 pt-2 text-slate-400 hidden">
+                <div class="accordion-content px-6 pb-6 pt-2 text-medium-text hidden">
                     <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed ml-4">${descriptionList}</ul>
-                    ${exp.projects.length > 0 ? `<p class="font-semibold text-emerald-400 mb-2 text-sm">Key Projects:</p><ul class="list-disc list-outside ml-4 space-y-1">${projectList}</ul>` : ''}
+                    ${exp.projects.length > 0 ? `<p class="font-semibold text-accent-emerald mb-2 text-sm">Key Projects:</p><ul class="list-disc list-outside ml-4 space-y-1">${projectList}</ul>` : ''}
                 </div>
             </div>
             `;
@@ -199,28 +243,31 @@ async function initSkillsSection() {
         console.error('Skills container not found.');
         return;
     }
+    console.log('1. initSkillsSection started');
 
     try {
         const response = await fetch('data/skills.json');
+        console.log('2. Fetched data/skills.json', response);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const categories = await response.json();
+        console.log('3. Parsed skills JSON', categories);
 
         const dynamicContent = categories.map(cat => {
             const skillItems = cat.skills.map(skill => {
                 if (skill.logo) {
-                    return `<div class="flex flex-col items-center text-center w-20 p-2"><img src="${skill.logo}" alt="${skill.name}" class="h-10 w-10 object-contain mb-2 transition-transform hover:scale-110"><span class="text-slate-400 text-xs">${skill.name}</span></div>`;
+                    return `<div class="flex flex-col items-center text-center w-20 p-2"><img src="${skill.logo}" alt="${skill.name}" class="h-10 w-10 object-contain mb-2 transition-transform hover:scale-110" onerror="this.style.display='none'"><span class="text-medium-text text-xs">${skill.name}</span></div>`;
                 } else {
-                    return `<span class="bg-slate-700 text-blue-200 text-sm font-medium py-1.5 px-3 rounded-full">${skill.name}</span>`;
+                    return `<span class="bg-accent-blue/50 text-light-text text-sm font-medium py-1.5 px-3 rounded-full">${skill.name}</span>`;
                 }
             }).join('');
 
             const contentClass = cat.skills.some(skill => skill.logo) ? "flex flex-wrap gap-4 justify-start" : "flex flex-wrap gap-3 justify-start";
 
             return `
-                <div class="mb-4 bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-700 collapsible-section hover:border-slate-600 transition-colors">
-                    <button class="w-full text-left px-6 py-4 bg-slate-900/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-lg transition-colors" aria-expanded="false">
-                        <h3 class="text-xl font-semibold text-emerald-300">${cat.category}</h3>
-                        <svg class="accordion-arrow w-6 h-6 text-slate-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div class="mb-4 bg-dark-card rounded-2xl overflow-hidden shadow-lg border border-dark-border collapsible-section hover:border-accent-emerald transition-colors hover:scale-[1.01]">
+                    <button class="w-full text-left px-6 py-4 bg-dark-bg/50 hover:bg-dark-border/50 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-accent-blue rounded-lg transition-colors" aria-expanded="false">
+                        <h3 class="text-xl font-semibold text-accent-emerald">${cat.category}</h3>
+                        <svg class="accordion-arrow w-6 h-6 text-medium-text transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
@@ -232,11 +279,14 @@ async function initSkillsSection() {
                 </div>
             `;
         }).join('');
+        console.log('4. Generated dynamicContent for skills');
 
         container.innerHTML = dynamicContent;
+        console.log('5. Set innerHTML for skills container');
 
     } catch (err) {
         console.error("Failed to load skills data:", err);
+        showErrorState(container, 'Failed to load skills.');
     }
 }
 
@@ -296,13 +346,13 @@ function initContactForm() {
                 const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
                 if (file.size > 10 * 1024 * 1024) {
                     fileInfo.textContent = 'File size exceeds 10MB. Please choose a smaller file.';
-                    fileInfo.classList.add('text-red-400');
-                    fileInfo.classList.remove('text-slate-500');
+                    fileInfo.classList.add('text-red-500');
+                    fileInfo.classList.remove('text-medium-text');
                     fileInput.value = '';
                 } else {
                     fileInfo.textContent = `Selected: ${file.name} (${fileSizeMB} MB)`;
-                    fileInfo.classList.remove('text-red-400');
-                    fileInfo.classList.add('text-emerald-400');
+                    fileInfo.classList.remove('text-red-500');
+                    fileInfo.classList.add('text-accent-emerald');
                 }
             } else {
                 fileInfo.textContent = '';
@@ -315,8 +365,8 @@ function initContactForm() {
         messageInput.addEventListener('input', () => {
             if (messageInput.value.length < 10) {
                 messageError.textContent = 'Message must be at least 10 characters long.';
-                messageError.classList.add('text-red-400');
-                messageError.classList.remove('text-slate-500');
+                messageError.classList.add('text-red-500');
+                messageError.classList.remove('text-medium-text');
             } else {
                 messageError.textContent = '';
             }
@@ -329,16 +379,16 @@ function initContactForm() {
         // Validate message length
         if (messageInput && messageInput.value.length < 10) {
             formStatus.textContent = 'Please enter a message with at least 10 characters.';
-            formStatus.classList.remove('text-emerald-400');
-            formStatus.classList.add('text-red-400');
+            formStatus.classList.remove('text-accent-emerald');
+            formStatus.classList.add('text-red-500');
             return;
         }
 
         // Validate file size if file is selected
         if (fileInput && fileInput.files[0] && fileInput.files[0].size > 10 * 1024 * 1024) {
             formStatus.textContent = 'File size exceeds 10MB. Please choose a smaller file.';
-            formStatus.classList.remove('text-emerald-400');
-            formStatus.classList.add('text-red-400');
+            formStatus.classList.remove('text-accent-emerald');
+            formStatus.classList.add('text-red-500');
             return;
         }
 
@@ -347,7 +397,7 @@ function initContactForm() {
         submitText.textContent = 'Sending...';
         submitSpinner.classList.remove('hidden');
         formStatus.textContent = '';
-        formStatus.classList.remove('text-emerald-400', 'text-red-400');
+        formStatus.classList.remove('text-accent-emerald', 'text-red-500');
 
         try {
             const formData = new FormData(form);
@@ -361,21 +411,21 @@ function initContactForm() {
 
             if (response.ok) {
                 formStatus.textContent = '✓ Thank you! Your message has been sent. I\'ll get back to you soon.';
-                formStatus.classList.add('text-emerald-400');
-                formStatus.classList.remove('text-red-400');
+                formStatus.classList.add('text-accent-emerald');
+                formStatus.classList.remove('text-red-500');
                 form.reset();
                 if (fileInfo) fileInfo.textContent = '';
                 if (messageError) messageError.textContent = '';
             } else {
                 const data = await response.json();
                 formStatus.textContent = data.error || 'Oops! There was a problem sending your message. Please try again.';
-                formStatus.classList.add('text-red-400');
-                formStatus.classList.remove('text-emerald-400');
+                formStatus.classList.add('text-red-500');
+                formStatus.classList.remove('text-accent-emerald');
             }
         } catch (error) {
             formStatus.textContent = 'Network error. Please check your connection and try again.';
-            formStatus.classList.add('text-red-400');
-            formStatus.classList.remove('text-emerald-400');
+            formStatus.classList.add('text-red-500');
+            formStatus.classList.remove('text-accent-emerald');
         } finally {
             submitBtn.disabled = false;
             submitText.textContent = 'Send Message';
@@ -390,11 +440,11 @@ function showLoadingState(container, message = 'Loading...') {
         container.innerHTML = `
             <div class="flex items-center justify-center py-12">
                 <div class="text-center">
-                    <svg class="animate-spin h-8 w-8 text-blue-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24">
+                    <svg class="animate-spin h-8 w-8 text-accent-blue mx-auto mb-4" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <p class="text-slate-400">${message}</p>
+                    <p class="text-medium-text">${message}</p>
                 </div>
             </div>
         `;
@@ -406,10 +456,10 @@ function showErrorState(container, message = 'Failed to load content. Please ref
         container.innerHTML = `
             <div class="flex items-center justify-center py-12">
                 <div class="text-center">
-                    <svg class="h-8 w-8 text-red-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="h-8 w-8 text-red-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <p class="text-slate-400">${message}</p>
+                    <p class="text-medium-text">${message}</p>
                 </div>
             </div>
         `;
@@ -426,13 +476,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Initialize dynamic content with loading states
     const experienceContainer = document.getElementById('work-experience-container');
     const skillsContainer = document.getElementById('skills-container');
+    const portfolioContainer = document.getElementById('portfolio-grid');
     
     if (experienceContainer) showLoadingState(experienceContainer, 'Loading experience...');
     if (skillsContainer) showLoadingState(skillsContainer, 'Loading skills...');
+    if (portfolioContainer) showLoadingState(portfolioContainer, 'Loading projects...');
     
     try {
         await Promise.all([
-            initProjectModalLogic(),
+            initPortfolioGrid().catch(err => {
+                console.error('Portfolio section error:', err);
+                if (portfolioContainer) showErrorState(portfolioContainer);
+            }),
             initExperienceSection().catch(err => {
                 console.error('Experience section error:', err);
                 if (experienceContainer) showErrorState(experienceContainer);

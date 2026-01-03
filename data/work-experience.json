@@ -4,7 +4,7 @@
     "company": "Parkefficient GmbH",
     "location": "Düsseldorf, Germany",
     "dates": "Nov 2022 - Present",
-    "logo": "https://parkefficient.de/favicon-32x32.png",
+    "logo": "https://cdn.prod.website-files.com/690dc408591f0efc49356261/690df21e3bc2eaaa1fa7ebb7_Logo_App_Icon.svg",
     "description": [
       "Developed comprehensive Laravel APIs and PHP Filament dashboards for B2B SaaS solutions.",
       "Built responsive frontends with Vue.js for both web and hybrid mobile applications.",
@@ -44,7 +44,7 @@
     "company": "Exultec Concepts GmbH",
     "location": "Aachen, Germany",
     "dates": "Nov 2017 - Jun 2020",
-    "logo": "https://exultec.net//assets/favicon/favicon-32x32.png",
+    "logo": "https://exultec.net/assets/favicon/favicon-32x32.png",
     "description": [
       "Developed REST APIs using LoopBack and built an Ionic-based invoice claim mobile application.",
       "Engineered Angular frontend modules for a custom business process management software (Exultec.net).",
@@ -62,7 +62,7 @@
     "company": "Ediflow GmbH",
     "location": "Brühl, Germany",
     "dates": "Mar 2017 - Oct 2017",
-    "logo": "https://ediflow.de/images/Ediflow/Logo_Ediflow_GmbH.png",
+    "logo": "https://placehold.co/100x100/png?text=E",
     "description": [
       "Developed frontend modules using AngularJS for the business process optimization web application, Inqoice.",
       "Conducted unit testing with the Jasmine framework to ensure module functionality and performance."
@@ -79,7 +79,7 @@
     "company": "Goodcore Software Pvt Ltd",
     "location": "Karachi, Pakistan",
     "dates": "Jun 2015 - Aug 2016",
-    "logo": "https://cdn-addgm.nitrocdn.com/MJnTlHySegcmvxPTBPLfaINTSJyWuhDi/assets/images/optimized/rev-0526930/www.goodcore.co.uk/assets/img/favicon.ico",
+    "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGIrOUZ3dP7XQ/company-logo_200_200/company-logo_200_200/0/1630598477655/goodcore_software_inc_logo?e=2147483647&v=beta&t=yuw-HYFuDYH90JPsZLzLwrtae9-A_2p18gZ29oKIKQc",
     "description": [
       "Contributed to a remittance management system for a CMIS Bank Malaysia agent, which provided seamless processing and administration of online and branch-originated transactions.",
       "Developed and maintained the official web app for the Malaysian Medical Association, serving as the largest representative body of doctors in Malaysia.",
