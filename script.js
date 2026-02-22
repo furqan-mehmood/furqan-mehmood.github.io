@@ -243,14 +243,11 @@ async function initSkillsSection() {
         console.error('Skills container not found.');
         return;
     }
-    console.log('1. initSkillsSection started');
 
     try {
         const response = await fetch('data/skills.json');
-        console.log('2. Fetched data/skills.json', response);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const categories = await response.json();
-        console.log('3. Parsed skills JSON', categories);
 
         const dynamicContent = categories.map(cat => {
             const skillItems = cat.skills.map(skill => {
@@ -279,14 +276,55 @@ async function initSkillsSection() {
                 </div>
             `;
         }).join('');
-        console.log('4. Generated dynamicContent for skills');
 
         container.innerHTML = dynamicContent;
-        console.log('5. Set innerHTML for skills container');
 
     } catch (err) {
         console.error("Failed to load skills data:", err);
         showErrorState(container, 'Failed to load skills.');
+    }
+}
+
+async function initTestimonialsSection() {
+    const container = document.getElementById('testimonials');
+    if (!container) {
+        console.error('Testimonials container not found.');
+        return;
+    }
+
+    try {
+        const response = await fetch('data/testimonials.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const testimonials = await response.json();
+
+        const dynamicContent = testimonials.map(testimonial => {
+            return `
+            <div class="p-6 bg-dark-bg rounded-xl shadow-lg border border-dark-border">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent-blue to-accent-emerald rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-white font-bold text-lg">${testimonial.author.charAt(0)}</span>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-semibold text-light-text mb-1">${testimonial.author}</h3>
+                        <p class="text-sm text-medium-text">${testimonial.relation}</p>
+                    </div>
+                </div>
+                <p class="text-light-text italic leading-relaxed">
+                    "${testimonial.testimonial}"
+                </p>
+            </div>
+            `;
+        }).join('');
+
+        const grid = container.querySelector('.grid');
+        if(grid) {
+            grid.insertAdjacentHTML('beforeend', dynamicContent);
+        }
+
+
+    } catch (err) {
+        console.error("Failed to load testimonials:", err);
+        showErrorState(container, 'Failed to load testimonials.');
     }
 }
 
@@ -477,6 +515,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const experienceContainer = document.getElementById('work-experience-container');
     const skillsContainer = document.getElementById('skills-container');
     const portfolioContainer = document.getElementById('portfolio-grid');
+    const testimonialsContainer = document.getElementById('testimonials');
     
     if (experienceContainer) showLoadingState(experienceContainer, 'Loading experience...');
     if (skillsContainer) showLoadingState(skillsContainer, 'Loading skills...');

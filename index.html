@@ -133,20 +133,20 @@
         </button>
         <div id="mobile-menu" class="hidden sm:hidden absolute top-full left-0 right-0 bg-dark-bg border-b border-dark-border shadow-lg">
             <div class="flex flex-col p-4 space-y-2">
-                <a href="#portfolio" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card">Portfolio</a>
                 <a href="#expertise" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card">Expertise</a>
                 <a href="#experience" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card">Experience</a>
-                <a href="#testimonials" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card">Testimonials</a>
+                <a href="#portfolio" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card">Portfolio</a>
                 <a href="#skills" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card">Skills</a>
+                <a href="#testimonials" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card">Testimonies</a>
                 <a href="#contact" class="bg-gradient-to-r from-accent-blue to-accent-emerald text-dark-bg font-bold py-2 px-5 rounded-lg transition-transform hover:scale-105 text-center">Contact Me</a>
             </div>
         </div>
         <div class="hidden sm:flex items-center space-x-2 text-sm">
-            <a href="#portfolio" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card/50 hover:-translate-y-0.5 hover:shadow-md">Portfolio</a>
             <a href="#expertise" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card/50 hover:-translate-y-0.5 hover:shadow-md">Expertise</a>
             <a href="#experience" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card/50">Experience</a>
-            <a href="#testimonials" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card/50">Testimonials</a>
+            <a href="#portfolio" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card/50 hover:-translate-y-0.5 hover:shadow-md">Portfolio</a>
             <a href="#skills" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card/50">Skills</a>
+            <a href="#testimonials" class="text-light-text hover:text-accent-blue transition-colors px-3 py-2 rounded-lg hover:bg-dark-card/50">Testimonies</a>
             <a href="#contact" class="bg-gradient-to-r from-accent-blue to-accent-emerald text-dark-bg font-bold py-2 px-5 rounded-lg transition-transform hover:scale-105">Contact Me</a>
         </div>
     </nav>
@@ -189,7 +189,7 @@
     </section>
 
     <div class="mb-16 flex flex-wrap gap-4 justify-center sm:justify-start">
-        <a href="#portfolio"
+        <!--<a href="#portfolio"
            class="flex items-center gap-2 bg-gradient-to-r from-accent-blue to-accent-emerald text-dark-bg font-bold py-3 px-6 rounded-lg transition-all hover:scale-105 hover:shadow-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-blue focus:ring-offset-2 focus:ring-offset-dark-bg">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M10 4l2 2h8a2 2 0 012 2v10a2
@@ -197,7 +197,7 @@
              2 0 012-2h6z"/>
             </svg>
             View Portfolio
-        </a>
+        </a>-->
 
         <a href="https://www.linkedin.com/in/furqanmehmood/" target="_blank" rel="noopener"
            class="flex items-center gap-2 bg-[#0A66C2] text-white font-medium py-3 px-6 rounded-lg hover:bg-[#084c99] transition-all hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2 focus:ring-offset-dark-bg">
@@ -293,6 +293,13 @@
         </div>
     </section>
 
+    <section id="experience" class="mb-16 section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
+        <h2 class="text-3xl font-bold text-accent-emerald mb-6">Work Experience</h2>
+        <div id="work-experience-container" class="space-y-6">
+            <!-- Experience will be dynamically inserted here -->
+        </div>
+    </section>
+
     <section id="portfolio" class="mb-16 section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-3xl font-bold text-accent-emerald">Featured Projects</h2>
@@ -305,124 +312,6 @@
 
 
 
-    <section id="testimonials" class="mb-16 section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
-        <h2 class="text-3xl font-bold text-accent-emerald mb-6">What People Say</h2>
-        <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
-            <div class="p-6 bg-dark-bg rounded-xl shadow-lg border border-dark-border">
-                <div class="flex items-start gap-4 mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-accent-blue to-accent-emerald rounded-full flex items-center justify-center flex-shrink-0">
-                        <span class="text-white font-bold text-lg">FM</span>
-                    </div>
-                    <div class="flex-grow">
-                        <h3 class="text-lg font-semibold text-light-text mb-1">Feedback Welcome</h3>
-                        <p class="text-sm text-medium-text">Colleagues & Clients</p>
-                    </div>
-                </div>
-                <p class="text-light-text italic leading-relaxed">
-                    "I'm always eager to receive feedback on our collaboration. If you have a moment, a testimonial about our shared projects and your experience working with me would be greatly appreciated."
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="mb-16 section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
-        <h2 class="text-3xl font-bold text-accent-emerald mb-6">Work Experience</h2>
-        <div id="work-experience-container" class="space-y-6">
-            <div class="mb-4 bg-dark-bg rounded-2xl overflow-hidden shadow-lg border border-dark-border collapsible-section">
-                <button class="w-full text-left px-6 py-4 bg-dark-bg/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
-                    <h3 class="text-lg font-semibold text-light-text">Senior Full Stack Developer · Parkefficient GmbH (Nov 2022 – Present)</h3>
-                    <svg class="accordion-arrow w-6 h-6 text-medium-text transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="accordion-content p-6 hidden">
-                    <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
-                        <li>Developed comprehensive Laravel APIs and PHP Filament dashboards for B2B SaaS solutions.</li>
-                        <li>Built responsive frontends with Vue.js for both web and hybrid mobile applications.</li>
-                        <li>Implemented interactive mapping using Leaflet and integrated third-party APIs for real-time parking access and SAML-based user authentication.</li>
-                    </ul>
-                    <p class="mt-4">
-                        <a href="https://parkefficient.de" target="_blank" class="text-accent-emerald hover:underline">Parkefficient</a> ·
-                        <a href="https://officeefficient.de" target="_blank" class="text-accent-emerald hover:underline">Officefficient</a>
-                    </p>
-                </div>
-            </div>
-            <div class="mb-4 bg-dark-bg rounded-2xl overflow-hidden shadow-lg border border-dark-border collapsible-section">
-                <button class="w-full text-left px-6 py-4 bg-dark-bg/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
-                    <h3 class="text-lg font-semibold text-light-text">Software Developer · Linear GmbH (Jul 2020 - Oct 2022)</h3>
-                    <svg class="accordion-arrow w-6 h-6 text-medium-text transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="accordion-content p-6 hidden">
-                    <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
-                        <li>Redeveloped the Flächenheizung system, a Building Information Modeling (BIM) web application, from Ruby to the MERN stack, resulting in significant performance improvements.</li>
-                        <li>Solely responsible for the architecture, development, and testing of the new system, implementing Redis for intensive calculations.</li>
-                        <li>Built a custom React.js application to handle client requests using Jira Service Management APIs, adding advanced filtering, search, and voting features.</li>
-                    </ul>
-                    <p class="mt-4">
-                        <a href="https://www.ivt-flaechenheizung-schnellauslegung.de" target="_blank" class="text-accent-emerald hover:underline">Linear Flächenheizung Schnellauslegung</a>
-                    </p>
-                </div>
-            </div>
-            <div class="mb-4 bg-dark-bg rounded-2xl overflow-hidden shadow-lg border border-dark-border collapsible-section">
-                <button class="w-full text-left px-6 py-4 bg-dark-bg/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
-                    <h3 class="text-lg font-semibold text-light-text">Full-Stack Developer · Exultec Concepts GmbH (Nov 2017 - Jun 2020)</h3>
-                    <svg class="accordion-arrow w-6 h-6 text-medium-text transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="accordion-content p-6 hidden">
-                    <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
-                        <li>Developed REST APIs using LoopBack and built an Ionic-based invoice claim mobile application.</li>
-                        <li>Engineered Angular frontend modules for a custom business process management software (Exultec.net).</li>
-                        <li>Key modules developed include Shift Planning, Capacity Pooling, Billing, and automated Contract Management.</li>
-                    </ul>
-                    <p class="mt-4">
-                        <a href="https://exultec.net/" target="_blank" class="text-accent-emerald hover:underline">Exultec.net</a>
-                    </p>
-                </div>
-            </div>
-            <div class="mb-4 bg-dark-bg rounded-2xl overflow-hidden shadow-lg border border-dark-border collapsible-section">
-                <button class="w-full text-left px-6 py-4 bg-dark-bg/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
-                    <h3 class="text-lg font-semibold text-light-text">Working Student Front-End Developer · Ediflow GmbH (Mar 2017 - Oct 2017)</h3>
-                    <svg class="accordion-arrow w-6 h-6 text-medium-text transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="accordion-content p-6 hidden">
-                    <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
-                        <li>Developed frontend modules using AngularJS for the business process optimization web application, Inqoice.</li>
-                        <li>Conducted unit testing with the Jasmine framework to ensure module functionality and performance.</li>
-                    </ul>
-                    <p class="mt-4">
-                        <a href="https://ediflow.de/#projects" target="_blank" class="text-accent-emerald hover:underline">Inqoice</a>
-                    </p>
-                </div>
-            </div>
-            <div class="mb-4 bg-dark-bg rounded-2xl overflow-hidden shadow-lg border border-dark-border collapsible-section">
-                <button class="w-full text-left px-6 py-4 bg-dark-bg/50 hover:bg-slate-700/50 flex justify-between items-center focus:outline-none transition-colors">
-                    <h3 class="text-lg font-semibold text-light-text">Software Engineer · Goodcore Software Pvt Ltd (Jun 2015 - Aug 2016)</h3>
-                    <svg class="accordion-arrow w-6 h-6 text-medium-text transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="accordion-content p-6 hidden">
-                    <ul class="list-disc list-outside space-y-2 mb-4 text-sm leading-relaxed">
-                        <li>Contributed to a remittance management system for a CMIS Bank Malaysia agent, which provided seamless processing and administration of online and branch-originated transactions.</li>
-                        <li>Developed and maintained the official web app for the Malaysian Medical Association, serving as the largest representative body of doctors in Malaysia.</li>
-                        <li>Provided technical support for key projects, including theEZ-Scheduler 2.0 andRelACS – Relocation Management System**.</li>
-                    </ul>
-                    <p class="mt-4">
-                        <a href="https://www.echovisionllc.com/overview.php" target="_blank" class="text-accent-emerald hover:underline">EZ-Scheduler 2.0</a> ·
-                        <a href="https://mma.org.my" target="_blank" class="text-accent-emerald hover:underline">Malaysian Medical Association</a> ·
-                        <a href="https://www.goodcore.co.uk/cases/relocation-management-system/" target="_blank" class="text-accent-emerald hover:underline">RelACS</a> ·
-                        <a href="https://www.goodcore.co.uk/cases/remittance-management-software/" target="_blank" class="text-accent-emerald hover:underline">Vitcomex</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
     <section id="skills" class="mb-16 section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
         <h2 class="text-3xl font-bold text-accent-emerald mb-6">Skills & Technologies</h2>
         <div id="skills-container" class="space-y-4">
@@ -596,6 +485,26 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+    <section id="testimonials" class="mb-16 section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
+        <h2 class="text-3xl font-bold text-accent-emerald mb-6">What People Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
+            <div class="p-6 bg-dark-bg rounded-xl shadow-lg border border-dark-border">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent-blue to-accent-emerald rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-white font-bold text-lg">FM</span>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-semibold text-light-text mb-1">Feedback Welcome</h3>
+                        <p class="text-sm text-medium-text">Colleagues & Clients</p>
+                    </div>
+                </div>
+                <p class="text-light-text italic leading-relaxed">
+                    "I'm always eager to receive feedback on our collaboration. If you have a moment, a testimonial about our shared projects and your experience working with me would be greatly appreciated."
+                </p>
+            </div>
+            <!-- Dynamic testimonials will be prepended or appended here if needed -->
         </div>
     </section>
     <section id="contact" class="section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
