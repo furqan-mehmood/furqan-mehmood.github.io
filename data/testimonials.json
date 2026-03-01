@@ -1,12 +1,7 @@
 [
     {
-        "author": "John Doe",
-        "relation": "CEO of Example Inc.",
-        "testimonial": "Furqan is a very talented developer. He is a great team player and has a keen eye for detail. I would recommend him to anyone looking for a great developer."
-    },
-    {
-        "author": "Jane Smith",
-        "relation": "Project Manager at another great company",
-        "testimonial": "I had the pleasure of working with Furqan on a complex project. He is a true professional and a great person to work with. I would be happy to work with him again."
+        "author": "Frederic Jost",
+        "relation": "CEO der Exultec Concepts GmbH",
+        "testimonial": "Furqan war mehrere Jahre als Entwickler bei der Exultec Concepts GmbH tätig und hat unsere Projekte maßgeblich mitgeprägt. Was ihn auszeichnet, ist die Kombination aus starker technischer Kompetenz und einer sehr angenehmen, unkomplizierten Zusammenarbeit. Er hat sich eigenständig in komplexe Themen eingearbeitet, sauberen und wartbaren Code geliefert und dabei immer das große Ganze im Blick behalten. Besonders geschätzt habe ich seine Zuverlässigkeit und die offene Kommunikation im Team – man konnte sich auf ihn verlassen. Ich kann Furqan uneingeschränkt empfehlen."
     }
 ]

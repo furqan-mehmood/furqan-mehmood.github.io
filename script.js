@@ -316,11 +316,7 @@ async function initTestimonialsSection() {
             `;
         }).join('');
 
-        const grid = container.querySelector('.grid');
-        if(grid) {
-            grid.insertAdjacentHTML('beforeend', dynamicContent);
-        }
-
+        container.innerHTML = dynamicContent;
 
     } catch (err) {
         console.error("Failed to load testimonials:", err);
@@ -520,6 +516,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (experienceContainer) showLoadingState(experienceContainer, 'Loading experience...');
     if (skillsContainer) showLoadingState(skillsContainer, 'Loading skills...');
     if (portfolioContainer) showLoadingState(portfolioContainer, 'Loading projects...');
+    if (testimonialsContainer) showLoadingState(testimonialsContainer, 'Loading testimonials...');
     
     try {
         await Promise.all([
@@ -534,6 +531,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             initSkillsSection().catch(err => {
                 console.error('Skills section error:', err);
                 if (skillsContainer) showErrorState(skillsContainer);
+            }),
+            initTestimonialsSection().catch(err => {
+                console.error('Testimonials section error:', err);
+                if (testimonialsContainer) showErrorState(testimonialsContainer);
             })
         ]);
         
