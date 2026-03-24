@@ -297,7 +297,8 @@ async function initTestimonialsSection() {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const testimonials = await response.json();
 
-        const dynamicContent = testimonials.map(testimonial => {
+        const dynamicContent = testimonials.map((testimonial, index) => {
+            const hasTranslation = typeof testimonial.testimonial_en === 'string' && testimonial.testimonial_en.trim().length > 0;
             return `
             <div class="p-6 bg-dark-bg rounded-xl shadow-lg border border-dark-border">
                 <div class="flex items-start gap-4 mb-4">
@@ -309,7 +310,15 @@ async function initTestimonialsSection() {
                         <p class="text-sm text-medium-text">${testimonial.relation}</p>
                     </div>
                 </div>
-                <p class="text-light-text italic leading-relaxed">
+                ${hasTranslation ? `
+                <div class="mb-3 flex items-center justify-between gap-3">
+                    <span class="inline-flex items-center text-xs font-medium px-2 py-1 rounded-full bg-accent-blue/20 text-accent-blue border border-accent-blue/40" data-testid="testimonial-language-label-${index}">Original (German)</span>
+                    <button type="button" class="text-xs font-medium text-accent-emerald hover:underline transition-colors" data-testid="testimonial-toggle-${index}" data-state="original" data-original="${testimonial.testimonial.replace(/"/g, '&quot;')}" data-translation="${hasTranslation ? testimonial.testimonial_en.replace(/"/g, '&quot;') : ''}" data-label-target="testimonial-language-label-${index}" data-quote-target="testimonial-quote-${index}">
+                        Show English translation
+                    </button>
+                </div>
+                ` : ''}
+                <p id="testimonial-quote-${index}" class="text-light-text italic leading-relaxed">
                     "${testimonial.testimonial}"
                 </p>
             </div>
@@ -317,6 +326,35 @@ async function initTestimonialsSection() {
         }).join('');
 
         container.innerHTML = dynamicContent;
+
+        // Toggle testimonial text between original and English translation where available.
+        container.querySelectorAll('[data-testid^="testimonial-toggle-"]').forEach(toggleBtn => {
+            toggleBtn.addEventListener('click', () => {
+                const quoteId = toggleBtn.getAttribute('data-quote-target');
+                const labelId = toggleBtn.getAttribute('data-label-target');
+                const quoteElement = quoteId ? document.getElementById(quoteId) : null;
+                const labelElement = labelId ? document.querySelector(`[data-testid="${labelId}"]`) : null;
+
+                if (!quoteElement || !labelElement) return;
+
+                const state = toggleBtn.getAttribute('data-state');
+                const original = toggleBtn.getAttribute('data-original');
+                const translation = toggleBtn.getAttribute('data-translation');
+                if (!original || !translation) return;
+
+                if (state === 'original') {
+                    quoteElement.textContent = `"${translation}"`;
+                    labelElement.textContent = 'English translation';
+                    toggleBtn.textContent = 'Show original (German)';
+                    toggleBtn.setAttribute('data-state', 'translation');
+                } else {
+                    quoteElement.textContent = `"${original}"`;
+                    labelElement.textContent = 'Original (German)';
+                    toggleBtn.textContent = 'Show English translation';
+                    toggleBtn.setAttribute('data-state', 'original');
+                }
+            });
+        });
 
     } catch (err) {
         console.error("Failed to load testimonials:", err);
