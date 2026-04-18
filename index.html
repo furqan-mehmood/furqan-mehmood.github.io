@@ -100,6 +100,7 @@
     <link rel="stylesheet" href="dist/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="images/profile.png" imagesrcset="images/profile.png 400w" imagesizes="400px">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -224,7 +225,7 @@
         <div class="md:col-span-2">
             <div class="bg-gradient-to-br from-dark-card to-dark-bg border border-dark-border rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
                 <div class="relative overflow-hidden rounded-lg border border-dark-border mb-4">
-                    <img class="w-full h-auto rounded-lg object-cover transition-transform duration-300 hover:scale-105 hero-img" src="images/profile.png" alt="Furqan Mehmood Profile Photo" width="400" height="400" loading="eager" decoding="async" />
+                    <img class="w-full h-auto rounded-lg object-cover transition-transform duration-300 hover:scale-105 hero-img" src="images/profile.png" alt="Furqan Mehmood Profile Photo" width="400" height="400" loading="eager" decoding="async" fetchpriority="high" />
                 </div>
                 
             </div>
