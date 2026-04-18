@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 170 70">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Neues_Verlaufsfeld_1-3);
+      }
+
+      .cls-2 {
+        fill: url(#Neues_Verlaufsfeld_1-7);
+      }
+
+      .cls-3 {
+        fill: url(#Neues_Verlaufsfeld_1-6);
+      }
+
+      .cls-4 {
+        fill: url(#Neues_Verlaufsfeld_1);
+      }
+
+      .cls-5 {
+        fill: url(#Neues_Verlaufsfeld_1-2);
+      }
+
+      .cls-6 {
+        fill: url(#Neues_Verlaufsfeld_1-4);
+      }
+
+      .cls-7 {
+        fill: url(#Neues_Verlaufsfeld_1-5);
+      }
+
+      .cls-8 {
+        fill: url(#Neues_Verlaufsfeld_1-8);
+      }
+    </style>
+    <linearGradient id="Neues_Verlaufsfeld_1" data-name="Neues Verlaufsfeld 1" x1="10" y1="15.91" x2="10" y2="15.91" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#61a4a4"/>
+      <stop offset="1" stop-color="#183d46"/>
+    </linearGradient>
+    <linearGradient id="Neues_Verlaufsfeld_1-2" data-name="Neues Verlaufsfeld 1" x1="8.84" y1="17.4" x2="35.31" y2="14.93" xlink:href="#Neues_Verlaufsfeld_1"/>
+    <linearGradient id="Neues_Verlaufsfeld_1-3" data-name="Neues Verlaufsfeld 1" x1="60.15" y1="25.56" x2="60.15" y2="25.56" xlink:href="#Neues_Verlaufsfeld_1"/>
+    <linearGradient id="Neues_Verlaufsfeld_1-4" data-name="Neues Verlaufsfeld 1" x1="62.3" y1="18.58" x2="42.38" y2="25.49" xlink:href="#Neues_Verlaufsfeld_1"/>
+    <linearGradient id="Neues_Verlaufsfeld_1-5" data-name="Neues Verlaufsfeld 1" x1="10" y1="15.91" x2="10" y2="15.91" xlink:href="#Neues_Verlaufsfeld_1"/>
+    <linearGradient id="Neues_Verlaufsfeld_1-6" data-name="Neues Verlaufsfeld 1" x1="24.66" y1="67.93" x2="14.95" y2="25.62" xlink:href="#Neues_Verlaufsfeld_1"/>
+    <linearGradient id="Neues_Verlaufsfeld_1-7" data-name="Neues Verlaufsfeld 1" x1="60.15" y1="25.56" x2="60.15" y2="25.56" xlink:href="#Neues_Verlaufsfeld_1"/>
+    <linearGradient id="Neues_Verlaufsfeld_1-8" data-name="Neues Verlaufsfeld 1" x1="38.91" y1="67.45" x2="55.95" y2="31.76" xlink:href="#Neues_Verlaufsfeld_1"/>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.2, SVG Export Plug-In . SVG Version: 1.2.0 Build 154)  -->
+  <g>
+    <g id="Ebene_1">
+      <g>
+        <path d="M140.89,38.91h-6.95l-2.56,5.95h-2.58l8.63-19.3,8.61,19.3h-2.58l-2.56-5.95ZM139.98,36.78l-2.56-5.99-2.58,5.99h5.14Z"/>
+        <path d="M89.26,25.56h2.46v19.3h-2.46v-19.3Z"/>
+        <path d="M111.96,44.86l-13.81-13.66v13.66h-2.45v-19.3l13.81,13.66v-13.66h2.45s0,19.3,0,19.3Z"/>
+        <polygon points="77.17 42.51 77.17 25.56 74.71 26.98 74.71 44.86 85.27 44.86 85.29 42.51 77.17 42.51"/>
+        <path d="M160,32.01c0-6.45-6.6-6.45-6.6-6.45h-4.4s0,11.05,0,11.05v8.25h2.45v-6.58h.99s.99.02,2.1-.11l2.87,6.69h2.58l-3.23-7.25c3.2-1.51,3.23-5.02,3.23-5.61ZM151.45,36.09v-8.27h1.6c2.73,0,4.38,1.7,4.38,4.08s-1.65,4.19-4.38,4.19h-1.6Z"/>
+        <polygon points="126.86 42.55 118.37 42.55 118.37 36.09 126.86 36.09 126.86 33.78 118.37 33.78 118.37 27.88 126.87 27.88 126.87 25.56 115.93 25.56 115.93 44.86 125.82 44.86 126.86 42.55"/>
+        <g>
+          <polygon class="cls-4" points="10 15.91 10 15.91 10 15.91 10 15.91"/>
+          <polygon class="cls-5" points="27.47 25.13 43.43 15.91 26.72 6.26 10.75 15.48 27.47 25.13"/>
+        </g>
+        <g>
+          <polygon class="cls-1" points="60.15 25.56 60.15 25.56 60.15 25.56 60.15 25.56"/>
+          <polygon class="cls-6" points="59.4 25.13 43.43 15.91 43.43 34.35 59.4 25.13"/>
+        </g>
+        <g>
+          <polygon class="cls-7" points="10 15.91 10 15.91 10 15.91 10 15.91"/>
+          <polygon class="cls-3" points="10 16.78 10 54.52 26.72 64.17 26.72 26.43 10 16.78"/>
+        </g>
+        <g>
+          <polygon class="cls-2" points="60.15 25.56 60.15 25.56 60.15 25.56 60.15 25.56"/>
+          <polygon class="cls-8" points="43.43 36.08 43.43 54.52 60.15 44.86 60.15 26.43 43.43 36.08"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

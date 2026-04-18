@@ -26,7 +26,7 @@
     "outcome_highlight": "Rebuilt a BIM web app on the MERN stack, achieving 50x performance improvement: from 50 rooms in minutes to 2,500 rooms in 5 seconds.",
     "description": "I led the backend migration of this Building Information Modeling (BIM) app from Ruby/Sinatra to the MERN stack. As co-developer, I was solely responsible for the architecture, Node.js/Express development, database design, and testing. I introduced Redis to handle intensive calculations, which transformed the system's capability: calculations that previously failed at 50 rooms now process 2,500 rooms in just 5 seconds — a 50x improvement. The frontend was developed in React.js by a teammate.",
     "tech": ["MERN Stack", "Redis", "BIM", "Ruby", "Sinatra"],
-    "image": "images/linear.png",
+    "image": "images/linear.svg",
     "link": "https://www.ivt-flaechenheizung-schnellauslegung.de"
   },
   {

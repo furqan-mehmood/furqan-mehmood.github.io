@@ -105,7 +105,6 @@ async function initPortfolioGrid() {
                 <img src="${project.image}" alt="${project.title}" class="w-full aspect-video object-cover border-b border-dark-border">
                 <div class="p-4 flex flex-col flex-grow">
                     <h3 class="text-lg font-bold text-light-text mb-2">${project.title}</h3>
-                    <p class="text-medium-text text-sm flex-grow">${project.short_description}</p>
                     <div class="flex flex-wrap gap-2 mt-4">
                         ${techList}
                     </div>
