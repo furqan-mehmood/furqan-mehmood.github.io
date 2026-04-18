@@ -102,7 +102,7 @@ async function initPortfolioGrid() {
 
             return `
             <article class="${projectCardClass}" data-project-id="${project.id}">
-                <img src="${project.image}" alt="${project.title}" class="w-full aspect-video object-cover border-b border-dark-border">
+                <img src="${project.image}" alt="${project.title}" class="w-full aspect-video object-cover border-b border-dark-border" loading="lazy" width="384" height="216" decoding="async">
                 <div class="p-4 flex flex-col flex-grow">
                     <h3 class="text-lg font-bold text-light-text mb-2">${project.title}</h3>
                     <div class="flex flex-wrap gap-2 mt-4">
@@ -204,7 +204,7 @@ async function initExperienceSection() {
             <div class="mb-4 bg-dark-bg rounded-2xl overflow-hidden shadow-lg border border-dark-border collapsible-section hover:border-accent-emerald transition-colors hover:scale-[1.01]">
                 <button class="w-full text-left px-6 py-4 bg-dark-bg/50 hover:bg-dark-border/50 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-accent-blue rounded-lg transition-colors" aria-expanded="false">
                     <span class="flex items-start flex-grow gap-4">
-                        <img src="${exp.logo}" alt="${exp.company} Logo" class="h-12 w-12 object-contain rounded-md bg-white p-1.5 flex-shrink-0" onerror="this.style.display='none'">
+                        <img src="${exp.logo}" alt="${exp.company} Logo" class="h-12 w-12 object-contain rounded-md bg-white p-1.5 flex-shrink-0" onerror="this.style.display='none'" loading="lazy" width="48" height="48">
                         <span class="flex-grow">
                             <span class="font-semibold text-accent-emerald text-lg block mb-1">${exp.role}</span>
                             <div class="text-light-text font-medium mb-1">${exp.company}</div>
@@ -251,10 +251,9 @@ async function initSkillsSection() {
         const dynamicContent = categories.map(cat => {
             const skillItems = cat.skills.map(skill => {
                 if (skill.logo) {
-                    return `<div class="flex flex-col items-center text-center w-20 p-2"><img src="${skill.logo}" alt="${skill.name}" class="h-10 w-10 object-contain mb-2 transition-transform hover:scale-110" onerror="this.style.display='none'"><span class="text-medium-text text-xs">${skill.name}</span></div>`;
-                } else {
-                    return `<span class="bg-accent-blue/50 text-light-text text-sm font-medium py-1.5 px-3 rounded-full">${skill.name}</span>`;
+                    return `<div class="flex flex-col items-center text-center w-20 p-2"><img src="${skill.logo}" alt="${skill.name}" class="h-10 w-10 object-contain mb-2 transition-transform hover:scale-110" onerror="this.style.display='none'" loading="lazy" width="40" height="40" decoding="async"><span class="text-medium-text text-xs">${skill.name}</span></div>`;
                 }
+                return `<span class="bg-accent-blue/50 text-light-text text-sm font-medium py-1.5 px-3 rounded-full">${skill.name}</span>`;
             }).join('');
 
             const contentClass = cat.skills.some(skill => skill.logo) ? "flex flex-wrap gap-4 justify-start" : "flex flex-wrap gap-3 justify-start";

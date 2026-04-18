@@ -100,11 +100,17 @@
     <link rel="stylesheet" href="dist/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
     <style>
+        /* Critical CSS for LCP */
+        .hero-img { aspect-ratio: 1 / 1; width: 100%; height: auto; }
         @layer base {
             body {
                 @apply bg-dark-bg text-light-text font-sans;
+                font-display: swap;
             }
             .timeline-line {
                 @apply absolute left-[5px] top-0 bottom-0 w-0.5 bg-slate-500;
@@ -159,7 +165,7 @@
 <header aria-label="Primary Navigation" class="sticky top-0 z-50 backdrop-saturate-[140%] backdrop-blur-md bg-dark-bg/70 border-b border-dark-border">
     <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
         <a href="#" class="flex gap-2.5 items-center font-bold text-lg tracking-wide hover:opacity-80 transition-opacity">
-            <img class="w-8 h-8 rounded-full object-cover" src="images/cover.png" aria-hidden="true" alt="User logo">
+            <img class="w-8 h-8 rounded-full object-cover" src="images/cover.png" aria-hidden="true" alt="User logo" width="32" height="32" loading="eager" decoding="async">
             <span>Furqan Mehmood</span>
         </a>
         <button id="mobile-menu-btn" class="sm:hidden p-2 text-light-text hover:text-accent-blue transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue rounded-lg" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -218,7 +224,7 @@
         <div class="md:col-span-2">
             <div class="bg-gradient-to-br from-dark-card to-dark-bg border border-dark-border rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
                 <div class="relative overflow-hidden rounded-lg border border-dark-border mb-4">
-                    <img class="w-full h-auto rounded-lg object-cover transition-transform duration-300 hover:scale-105" src="images/profile.png" alt="Furqan Mehmood Profile Photo" />
+                    <img class="w-full h-auto rounded-lg object-cover transition-transform duration-300 hover:scale-105 hero-img" src="images/profile.png" alt="Furqan Mehmood Profile Photo" width="400" height="400" loading="eager" decoding="async" />
                 </div>
                 
             </div>
@@ -633,7 +639,7 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
     const modal = document.getElementById('project-modal');
