@@ -6,7 +6,7 @@
 
     <title>Furqan Mehmood | Senior Software Architect | Custom Web Apps & Technical Leadership</title>
     <meta name="description" content="Senior Software Engineer & Architect with 10+ years experience. Specialist in Custom SaaS, AI-Native Apps, and Digitalization Strategy for Recruiters, Startups, and Global Companies.">
-    <link rel="icon" type="image/x-icon" href="/images/cover.png">
+    <link rel="icon" type="image/x-icon" href="images/profile.png">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -96,10 +96,11 @@
     <meta name="twitter:title" content="Furqan Mehmood | Senior Software Architect | Custom SaaS & Technical Leadership">
     <meta name="twitter:description" content="Senior Software Engineer & Architect with 10+ years experience. Specialist in Custom SaaS, Technical Leadership, and Digitalization for Global Companies.">
     <meta name="twitter:image" content="https://furqan-mehmood.github.io/images/profile.png">
-    <link rel="icon" href="images/profile.png">
-    <link rel="stylesheet" href="dist/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="dist/output.css">
+    <link rel="stylesheet" href="dist/output.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="dist/output.css"></noscript>
     <link rel="preload" as="image" href="images/profile.png" imagesrcset="images/profile.png 400w" imagesizes="400px">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
@@ -107,6 +108,7 @@
     </noscript>
     <style>
         /* Critical CSS for LCP */
+        html { scroll-padding-top: 80px; }
         .hero-img { aspect-ratio: 1 / 1; width: 100%; height: auto; }
         @layer base {
             body {

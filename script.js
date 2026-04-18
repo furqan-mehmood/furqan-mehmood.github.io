@@ -60,17 +60,12 @@ function initSmoothScroll() {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
+                target.scrollIntoView({
                     behavior: 'smooth'
                 });
             }
         });
-    });
+    }, { passive: true });
 }
 
 // Function to handle the scroll-in animation for sections
@@ -536,51 +531,50 @@ function showErrorState(container, message = 'Failed to load content. Please ref
     }
 }
 
-// Corrected DOMContentLoaded
+// Optimized DOMContentLoaded
 document.addEventListener('DOMContentLoaded', async () => {
-    // Initialize static features first
+    // Initialize static features first (No reflows)
     initMobileMenu();
     initSmoothScroll();
-    document.querySelectorAll('.section-fade-in').forEach(section => observer.observe(section));
     
-    // Initialize dynamic content with loading states
+    const sections = document.querySelectorAll('.section-fade-in');
+    sections.forEach(section => observer.observe(section));
+    
     const experienceContainer = document.getElementById('work-experience-container');
     const skillsContainer = document.getElementById('skills-container');
     const portfolioContainer = document.getElementById('portfolio-grid');
     const testimonialsContainer = document.getElementById('testimonials');
     
-    if (experienceContainer) showLoadingState(experienceContainer, 'Loading experience...');
-    if (skillsContainer) showLoadingState(skillsContainer, 'Loading skills...');
-    if (portfolioContainer) showLoadingState(portfolioContainer, 'Loading projects...');
-    if (testimonialsContainer) showLoadingState(testimonialsContainer, 'Loading testimonials...');
+    // Show loading states immediately
+    if (experienceContainer) showLoadingState(experienceContainer);
+    if (skillsContainer) showLoadingState(skillsContainer);
+    if (portfolioContainer) showLoadingState(portfolioContainer);
+    if (testimonialsContainer) showLoadingState(testimonialsContainer);
     
-    try {
-        await Promise.all([
-            initPortfolioGrid().catch(err => {
-                console.error('Portfolio section error:', err);
-                if (portfolioContainer) showErrorState(portfolioContainer);
-            }),
-            initExperienceSection().catch(err => {
-                console.error('Experience section error:', err);
-                if (experienceContainer) showErrorState(experienceContainer);
-            }),
-            initSkillsSection().catch(err => {
-                console.error('Skills section error:', err);
-                if (skillsContainer) showErrorState(skillsContainer);
-            }),
-            initTestimonialsSection().catch(err => {
-                console.error('Testimonials section error:', err);
-                if (testimonialsContainer) showErrorState(testimonialsContainer);
-            })
-        ]);
-        
-        // Initialize accordions after content is loaded
+    // Fetch and render sections independently to prioritize above-the-fold content
+    initPortfolioGrid().catch(err => {
+        console.error('Portfolio error:', err);
+        if (portfolioContainer) showErrorState(portfolioContainer);
+    });
+
+    initExperienceSection().catch(err => {
+        console.error('Experience error:', err);
+        if (experienceContainer) showErrorState(experienceContainer);
+    });
+
+    initSkillsSection().catch(err => {
+        console.error('Skills error:', err);
+        if (skillsContainer) showErrorState(skillsContainer);
+    });
+
+    initTestimonialsSection().then(() => {
+        // Initialize accordions only after content is injected
         initAccordionListeners();
-    } catch (err) {
-        console.error('Initialization error:', err);
-    }
+    }).catch(err => {
+        console.error('Testimonials error:', err);
+        if (testimonialsContainer) showErrorState(testimonialsContainer);
+    });
     
-    // Initialize contact form
     initContactForm();
 });
 
