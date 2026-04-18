@@ -102,26 +102,22 @@
     <link rel="stylesheet" href="dist/output.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="dist/output.css"></noscript>
     <link rel="preload" as="image" href="images/profile.png" imagesrcset="images/profile.png 400w" imagesizes="400px">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     </noscript>
     <style>
         /* Critical CSS for LCP */
         html { scroll-padding-top: 80px; }
         .hero-img { aspect-ratio: 1 / 1; width: 100%; height: auto; }
-        @layer base {
-            body {
-                @apply bg-dark-bg text-light-text font-sans;
-                font-display: swap;
-            }
-            .timeline-line {
-                @apply absolute left-[5px] top-0 bottom-0 w-0.5 bg-slate-500;
-            }
-
-            .timeline-item::before {
-                @apply content-[''] absolute left-[-14px] top-3 h-2 w-2 rounded-full bg-blue-400;
-            }
+        body {
+            background-color: #1a1a2e;
+            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-display: swap;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
         }
         .section-fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
         .section-visible { opacity: 1; transform: translateY(0); }
@@ -200,16 +196,30 @@
 
 <main class="max-w-6xl mx-auto p-6 sm:p-12">
 
-    <section id="hero" class="bg-gradient-to-br from-dark-card to-dark-bg grid grid-cols-1 md:grid-cols-5 gap-8 items-start mb-24 section-fade-in rounded-2xl p-8">
+    <section id="hero" class="bg-gradient-to-br from-dark-card to-dark-bg grid grid-cols-1 md:grid-cols-5 gap-x-8 gap-y-4 md:gap-y-0 items-start mb-24 section-fade-in rounded-2xl p-8">
+        <!-- Heading Part -->
         <div class="md:col-span-3">
                 <span class="inline-flex gap-2 items-center bg-accent-blue/50 border border-accent-blue text-light-text text-sm font-medium px-3 py-1.5 rounded-full mb-6">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l9 6-9 6-9-6 9-6zm0 8.485l9-6V17l-9 6-9-6V5.485l9 6z" stroke="currentColor" stroke-width="1.2"></path></svg>
                     Senior Full-Stack Engineer
                 </span>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
                 <span class="bg-gradient-to-r from-accent-blue to-accent-emerald bg-clip-text text-transparent">10+ Years</span> of Experience Building Scalable SaaS Platforms. <span class="bg-gradient-to-r from-accent-blue to-accent-emerald bg-clip-text text-transparent">Full Remote</span> Senior Engineer.
             </h1>
-            <p class="text-lg sm:text-xl text-light-text max-w-3xl mb-6 leading-relaxed">
+        </div>
+
+        <!-- Image Column (Order 2 on mobile, right side on desktop) -->
+        <div class="md:col-span-2 md:row-span-2 mb-6 md:mb-0">
+            <div class="bg-gradient-to-br from-dark-card to-dark-bg border border-dark-border rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                <div class="relative overflow-hidden rounded-lg border border-dark-border">
+                    <img class="w-full h-auto min-h-[400px] max-h-[650px] rounded-lg object-cover transition-transform duration-300 hover:scale-105 hero-img" src="images/profile.png" alt="Furqan Mehmood Profile Photo" width="400" height="400" loading="eager" decoding="async" fetchpriority="high" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Description & Qualifications Part -->
+        <div class="md:col-span-3">
+            <p class="text-base sm:text-lg text-light-text max-w-3xl mb-6 leading-relaxed">
                 With over 10+ years of global experience, including almost a decade in the DACH SaaS market, I am a full-stack solutions developer, specializing in scalable and user-centric applications. I am passionate about leveraging AI to enhance development workflows and thrive in international environments. Bringing a unique perspective from my background in both Germany and Pakistan, I am keen to collaborate with teams and clients across the globe and am available for remote opportunities globally.
             </p>
             <div class="mt-8 border-l-4 border-accent-blue/50 pl-5 text-medium-text space-y-3 bg-dark-card/30 py-4 rounded-r-lg">
@@ -224,64 +234,9 @@
                 </p>
             </div>
         </div>
-        <div class="md:col-span-2">
-            <div class="bg-gradient-to-br from-dark-card to-dark-bg border border-dark-border rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-                <div class="relative overflow-hidden rounded-lg border border-dark-border mb-4">
-                    <img class="w-full h-auto rounded-lg object-cover transition-transform duration-300 hover:scale-105 hero-img" src="images/profile.png" alt="Furqan Mehmood Profile Photo" width="400" height="400" loading="eager" decoding="async" fetchpriority="high" />
-                </div>
-                
-            </div>
-        </div>
     </section>
 
-    <div class="mb-16 flex flex-wrap gap-4 justify-center sm:justify-start">
-        <!--<a href="#portfolio"
-           class="flex items-center gap-2 bg-gradient-to-r from-accent-blue to-accent-emerald text-dark-bg font-bold py-3 px-6 rounded-lg transition-all hover:scale-105 hover:shadow-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-blue focus:ring-offset-2 focus:ring-offset-dark-bg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 4l2 2h8a2 2 0 012 2v10a2
-             2 0 01-2 2H4a2 2 0 01-2-2V6a2
-             2 0 012-2h6z"/>
-            </svg>
-            View Portfolio
-        </a>-->
-
-        <a href="https://www.linkedin.com/in/furqanmehmood/" target="_blank" rel="noopener"
-           class="flex items-center gap-2 bg-[#0A66C2] text-white font-medium py-3 px-6 rounded-lg hover:bg-[#084c99] transition-all hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2 focus:ring-offset-dark-bg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.77 0-5 2.23-5 5v14c0
-             2.77 2.23 5 5 5h14c2.77
-             0 5-2.23 5-5v-14c0-2.77-2.23-5-5-5zm-11
-             19h-3v-10h3v10zm-1.5-11.29c-.96
-             0-1.75-.79-1.75-1.75s.79-1.75
-             1.75-1.75 1.75.79
-             1.75 1.75-.79 1.75-1.75
-             1.75zm13.5
-             11.29h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87
-             0-2.16 1.46-2.16
-             2.96v5.71h-3v-10h2.88v1.36h.04c.4-.75
-             1.38-1.54 2.85-1.54 3.05
-             0 3.61 2.01 3.61 4.62v5.56z"/>
-            </svg>
-            LinkedIn
-        </a>
-
-        <a href="https://github.com/furqanMehmoodCodes" target="_blank" rel="noopener"
-           class="flex items-center gap-2 bg-dark-card border border-dark-border text-white font-medium py-3 px-6 rounded-lg hover:bg-slate-700 hover:border-slate-600 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:ring-offset-2 focus:ring-offset-dark-bg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            GitHub
-        </a>
-
-        <a href="cv.pdf" download
-           class="flex items-center gap-2 bg-dark-card border border-dark-border text-white font-medium py-3 px-6 rounded-lg hover:bg-slate-700 hover:border-slate-600 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:ring-offset-2 focus:ring-offset-dark-bg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-8
-             2v2h16v-2H4z"/>
-            </svg>
-            Download CV
-        </a>
-    </div>
+    <div class="mb-8"></div>
 
     <section id="expertise" class="mb-16 section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
         <h2 class="text-3xl font-bold text-accent-emerald mb-8">My Expertise</h2>
@@ -575,11 +530,9 @@
         </div>
     </section>
     <section id="contact" class="section-fade-in p-6 sm:p-8 bg-dark-card rounded-2xl shadow-lg border border-dark-border">
-        <h2 class="text-3xl font-bold text-accent-emerald mb-4">Let’s Work on Something Great Together</h2>
+        <h2 class="text-3xl font-bold text-accent-emerald mb-4">Let’s Connect</h2>
         <p class="text-medium-text mb-6 max-w-2xl">
-            Always open to meaningful opportunities and ideas — feel free to reach out via the form or
-            <a href="mailto:furqanmehmood@hotmail.com" class="text-accent-emerald hover:underline font-medium">email</a>,
-            and I’ll reply as soon as I can.
+            I am available for professional opportunities and strategic collaborations. Please submit your inquiry via the form below, and I will respond to your request promptly.
         </p>
 
         <form id="contact-form" action="https://formspree.io/f/mvgbdddw" method="POST" enctype="multipart/form-data">
@@ -632,6 +585,47 @@
                 </span>
         </div>
     </footer>
+    <aside class="fixed bottom-4 left-0 right-0 sm:bottom-auto sm:right-auto sm:left-0 sm:top-1/2 sm:-translate-y-1/2 z-[100] flex sm:flex-col gap-2 items-start overflow-x-auto sm:overflow-x-visible px-4 sm:px-0 no-scrollbar">
+        <a href="https://wa.me/4917640498143" target="_blank" rel="noopener"
+           class="flex flex-shrink-0 items-center justify-center sm:hover:justify-start w-[60px] sm:hover:w-fit bg-[#25D366] text-white font-medium py-3 px-0 sm:hover:px-4 rounded-lg sm:rounded-l-none sm:rounded-r-lg hover:bg-[#128C7E] transition-all sm:hover:pl-6 shadow-lg group"
+           title="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" class="flex-shrink-0">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.82c1.516.903 3.009 1.365 4.547 1.365 5.414 0 9.82-4.406 9.822-9.82 0-2.628-1.024-5.1-2.885-6.958-1.861-1.859-4.331-2.885-6.957-2.885-5.414 0-9.819 4.408-9.822 9.821 0 1.745.459 3.44 1.329 4.921l-1.007 3.676 3.774-.99zm10.307-5.662c-.277-.139-1.638-.808-1.892-.899-.253-.092-.438-.139-.623.139-.184.277-.714.899-.875 1.084-.161.184-.322.207-.599.069-.276-.139-1.169-.431-2.227-1.374-.824-.735-1.38-1.642-1.541-1.919-.162-.276-.017-.426.121-.564.124-.125.277-.323.415-.484.139-.161.184-.276.277-.461.092-.185.046-.346-.023-.485-.069-.139-.623-1.501-.853-2.055-.224-.541-.47-.467-.647-.467-.168 0-.361-.008-.553-.008s-.507.072-.772.359c-.264.287-1.012.989-1.012 2.41 0 1.42 1.034 2.795 1.178 2.98.145.185 2.035 3.107 4.93 4.357.688.297 1.226.474 1.645.607.692.22 1.321.19 1.819.116.554-.082 1.638-.669 1.868-1.314.23-.646.23-1.199.162-1.314-.069-.115-.253-.184-.53-.323z"/>
+            </svg>
+            <span class="max-w-0 overflow-hidden sm:group-hover:max-w-xs sm:group-hover:ml-3 transition-all duration-300 ease-in-out whitespace-nowrap">WhatsApp</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/furqanmehmood/" target="_blank" rel="noopener"
+           class="flex flex-shrink-0 items-center justify-center sm:hover:justify-start w-[60px] sm:hover:w-fit bg-[#0A66C2] text-white font-medium py-3 px-0 sm:hover:px-4 rounded-lg sm:rounded-l-none sm:rounded-r-lg hover:bg-[#084c99] transition-all sm:hover:pl-6 shadow-lg group"
+           title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" class="flex-shrink-0">
+                <path d="M19 0h-14c-2.77 0-5 2.23-5 5v14c0 2.77 2.23 5 5 5h14c2.77 0 5-2.23 5-5v-14c0-2.77-2.23-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.29c-.96 0-1.75-.79-1.75-1.75s.79-1.75 1.75-1.75 1.75.79 1.75 1.75-.79 1.75-1.75 1.75zm13.5 11.29h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.96v5.71h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.85-1.54 3.05 0 3.61 2.01 3.61 4.62v5.56z"/>
+            </svg>
+            <span class="max-w-0 overflow-hidden sm:group-hover:max-w-xs sm:group-hover:ml-3 transition-all duration-300 ease-in-out">LinkedIn</span>
+        </a>
+
+        <a href="mailto:furqanmehmood@hotmail.com"
+           class="flex flex-shrink-0 items-center justify-center sm:hover:justify-start w-[60px] sm:hover:w-fit bg-accent-blue text-white font-medium py-3 px-0 sm:hover:px-4 rounded-lg sm:rounded-l-none sm:rounded-r-lg hover:bg-blue-600 transition-all sm:hover:pl-6 shadow-lg group"
+           title="Email Me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="flex-shrink-0">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span class="max-w-0 overflow-hidden sm:group-hover:max-w-xs sm:group-hover:ml-3 transition-all duration-300 ease-in-out whitespace-nowrap">Email Me</span>
+        </a>
+
+        <a href="cv.pdf" download
+           class="flex flex-shrink-0 items-center justify-center sm:hover:justify-start w-[60px] sm:hover:w-fit bg-dark-card border border-dark-border text-white font-medium py-3 px-0 sm:hover:px-4 rounded-lg sm:rounded-l-none sm:rounded-r-lg hover:bg-slate-700 hover:border-slate-600 transition-all sm:hover:pl-6 shadow-lg group"
+           title="Download CV">
+            <span class="w-0 overflow-hidden sm:group-hover:w-5 sm:group-hover:mr-3 transition-all duration-300 ease-in-out flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-8 2v2h16v-2H4z"/>
+                </svg>
+            </span>
+            <span class="max-w-0 overflow-hidden sm:group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap">Download&nbsp;</span>
+            <span class="font-bold">CV</span>
+        </a>
+    </aside>
 </main>
 
 <div id="project-modal" class="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden animate-fadeIn">
