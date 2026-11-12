@@ -923,6 +923,9 @@ video {
 .border-accent-blue\/50 {
   border-color: rgb(15 76 117 / 0.5);
 }
+.border-accent-emerald\/50 {
+  border-color: rgb(111 255 233 / 0.5);
+}
 .border-dark-border {
   --tw-border-opacity: 1;
   border-color: rgb(43 58 90 / var(--tw-border-opacity, 1));
@@ -1647,6 +1650,10 @@ video {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:grid-cols-5 {
